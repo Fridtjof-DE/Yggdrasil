@@ -1,0 +1,7 @@
+name: Yggdrasil
+version: ${project.version}
+main: tk.fridtjof.yggdrasil.Yggdrasil
+api-version: 1.15.2
+authors: [Fridtjof_DE]
+description: An essential plugin
+website: https://www.fridtjof.tk/
