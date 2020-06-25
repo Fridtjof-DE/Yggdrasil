@@ -22,7 +22,7 @@ public class HeadCMD implements CommandExecutor {
         String p = Theme.getPrimary();
         String s = Theme.getSecondary();
 
-        if(sender.hasPermission("yggdrasil.head") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.cmd.head") || sender.isOp()) {
 
             Player player = (Player) sender;
             PlayerInventory inv = player.getInventory();

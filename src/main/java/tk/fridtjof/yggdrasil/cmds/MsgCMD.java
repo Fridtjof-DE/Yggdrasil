@@ -9,6 +9,9 @@ import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class MsgCMD implements CommandExecutor {
 
+    String p = Theme.getPrimary();
+    String s = Theme.getSecondary();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -30,14 +33,11 @@ public class MsgCMD implements CommandExecutor {
                         i = i + 1;
                     }
 
-                    String p = Theme.getPrimary();
-                    String s = Theme.getSecondary();
-
                     sender.sendMessage(p + "[" + s + "Me" + p + "] " + s + ">>> " + p + "[" + s + target.getName() + p + "]§r:" + msg);
                     target.sendMessage(p + "[" + s + sender.getName() + p + "] " + s + ">>> " + p + "[" + s + "Me" + p + "]§r:" + msg);
 
                 } else if (!(target != null)) {
-                    sender.sendMessage("§cThat player is not currently online!");
+                    sender.sendMessage("§cThe player " + p + args[0] + " §cis currently not online!");
                 }
             }
         } else {

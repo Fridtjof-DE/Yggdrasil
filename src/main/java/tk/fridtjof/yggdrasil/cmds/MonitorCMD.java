@@ -14,13 +14,13 @@ public class MonitorCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
+    String p = Theme.getPrimary();
+    String s = Theme.getSecondary();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender.hasPermission("yggdrasil.monitor") || sender.isOp()) {
-
-            String p = Theme.getPrimary();
-            String s = Theme.getSecondary();
+        if(sender.hasPermission("yggdrasil.cmd.monitor") || sender.isOp()) {
 
             Runtime r = Runtime.getRuntime();
             long memTotal = r.totalMemory() / 1048576;

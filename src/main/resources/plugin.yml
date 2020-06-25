@@ -13,13 +13,25 @@ commands:
     description: Gets a player's head.
   msg:
     description: Sends a message to player.
+  setspawn:
+    description: Sets the spawn.
+  spawn:
+    description: Send the player to the spawn.
+  yggdrasil:
+    description: Some Yggdrasil commands.
 
 permissions:
   yggdrasil.cmd.monitor:
     description: Grants permission to use the /monitor command!
-  yggdrasil.sign.color_codes:
+  yggdrasil.signs.color_codes:
     description: Grants permission to use color codes on signs!
-  yggdrasil.sign.formatting_codes:
+  yggdrasil.signs.formatting_codes:
     description: Grants permission to use formatting codes on signs!
   yggdrasil.cmd.head:
     description: Gets a player's head.
+  yggdrasil.cmd.setspawn:
+    description: Sets the spawn.
+  yggdrasil.cmd.spawn:
+    description: Send the player to the spawn.
+  yggdrasil.reload:
+    description: Reloads the plugin.
