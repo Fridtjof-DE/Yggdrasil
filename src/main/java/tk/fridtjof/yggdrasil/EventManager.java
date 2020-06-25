@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import tk.fridtjof.yggdrasil.cmds.SpawnCMD;
 import tk.fridtjof.yggdrasil.utils.ColorCodes;
@@ -30,9 +31,25 @@ public class EventManager implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+
         if(plugin.getConfig().getBoolean("spawn.tp_on_join")) {
-            Player player = event.getPlayer();
             SpawnCMD.sendToSpawn(player);
+        }
+
+        if(plugin.getConfig().getBoolean("chat.custom_join_quit_msg")) {
+            String joinMSG = plugin.getConfig().getString("chat.join_msg");
+            event.setJoinMessage(joinMSG.replaceAll("%player%", player.getDisplayName()));
+        }
+    }
+
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event) {
+        Player player = event.getPlayer();
+
+        if(plugin.getConfig().getBoolean("chat.custom_join_quit_msg")) {
+            String quitMSG = plugin.getConfig().getString("chat.quit_msg");
+            event.setQuitMessage(quitMSG.replaceAll("%player%", player.getDisplayName()));
         }
     }
 

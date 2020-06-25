@@ -23,6 +23,10 @@ public class Config {
         plugin.getConfig().addDefault("spawn.tp_on_respawn", false);
         plugin.getConfig().addDefault("spawn.tp_on_join", false);
 
+        plugin.getConfig().addDefault("chat.custom_join_quit_msg", true);
+        plugin.getConfig().addDefault("chat.join_msg", "§a%player% joined the server!");
+        plugin.getConfig().addDefault("chat.quit_msg", "§a%player% left the server!");
+
 
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();

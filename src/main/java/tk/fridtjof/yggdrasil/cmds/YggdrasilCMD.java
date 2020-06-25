@@ -27,6 +27,8 @@ public class YggdrasilCMD implements CommandExecutor {
                     Config.loadConfig();
                     sender.sendMessage("§aReload complete!");
                 }
+            } else {
+                sender.sendMessage("§cUnknown args!");
             }
         }
 
