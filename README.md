@@ -1,2 +1,2 @@
 # Yggdrasil
-An essential plugin
+An essential Spigot plugin
