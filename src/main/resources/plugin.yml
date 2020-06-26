@@ -19,6 +19,8 @@ commands:
     description: Send the player to the spawn.
   yggdrasil:
     description: Some Yggdrasil commands.
+  heal:
+    description: Heal.
 
 permissions:
   yggdrasil.cmd.monitor:
@@ -35,3 +37,11 @@ permissions:
     description: Send the player to the spawn.
   yggdrasil.reload:
     description: Reloads the plugin.
+  yggdrasil.heal:
+    description: Heal.
+  yggdrasil.cmd.heal.others:
+    description: Heal others.
+  yggdrasil.chat.color_codes:
+    description: Allows the user to user colors in chat.
+  yggdrasil.chat.formatting_codes:
+    description: Allows the user to user formatting codes in chat.

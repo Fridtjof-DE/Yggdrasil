@@ -24,21 +24,26 @@ public class HeadCMD implements CommandExecutor {
 
         if(sender.hasPermission("yggdrasil.cmd.head") || sender.isOp()) {
 
-            Player player = (Player) sender;
-            PlayerInventory inv = player.getInventory();
-
             if(args.length == 0) {
-                sender.sendMessage(s + "Here's " + p + "your" + s + " head!");
-                inv.addItem(getPlayerHead(sender.getName()));
+                if(sender instanceof Player) {
+                    Player player = (Player) sender;
+                    PlayerInventory inv = player.getInventory();
+                    inv.addItem(getPlayerHead(sender.getName()));
+                    sender.sendMessage(s + "Here's " + p + "your" + s + " head!");
+                } else {
+                    sender.sendMessage("§cThis command is player-only!");
+                }
             } else if(args.length == 1) {
-                sender.sendMessage(s + "Here's the head of " + p + args[0] + s + "!");
+                Player player = (Player) sender;
+                PlayerInventory inv = player.getInventory();
                 inv.addItem(getPlayerHead(args[0]));
+                sender.sendMessage(s + "Here's the head of " + p + args[0] + s + "!");
             } else if (args.length == 2) {
                 Player player2 = Bukkit.getPlayer(args[1]);
                 if(player2 != null) {
                     PlayerInventory inv2 = player2.getInventory();
-                    sender.sendMessage(s + "Gave " + p + args[1] + s + " the head of " + p + args[0] + s + "!");
                     inv2.addItem(getPlayerHead(args[0]));
+                    sender.sendMessage(s + "Gave " + p + args[1] + s + " the head of " + p + args[0] + s + "!");
                 } else {
                     sender.sendMessage("§cThe player " + p + args[1] + "§c is not online!");
                 }

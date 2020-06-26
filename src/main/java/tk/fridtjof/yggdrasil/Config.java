@@ -27,6 +27,7 @@ public class Config {
         plugin.getConfig().addDefault("chat.join_msg", "§a%player% joined the server!");
         plugin.getConfig().addDefault("chat.quit_msg", "§a%player% left the server!");
 
+        plugin.getConfig().addDefault("cmds.heal.feed_on_heal", true);
 
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();

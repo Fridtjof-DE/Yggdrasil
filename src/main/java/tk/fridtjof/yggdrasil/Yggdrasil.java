@@ -29,6 +29,7 @@ public final class Yggdrasil extends JavaPlugin {
         getCommand("setspawn").setExecutor(new SetSpawnCMD());
         getCommand("spawn").setExecutor(new SpawnCMD());
         getCommand("yggdrasil").setExecutor(new YggdrasilCMD());
+        getCommand("heal").setExecutor(new HealCMD());
 
         int pluginId = 7954;
         new Metrics(this, pluginId);

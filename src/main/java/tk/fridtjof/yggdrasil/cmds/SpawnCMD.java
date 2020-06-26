@@ -18,9 +18,13 @@ public class SpawnCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender.hasPermission("yggdrasil.cmd.spawn") || sender.isOp()) {
-            Player player = (Player) sender;
-            sendToSpawn(player);
+        if(sender instanceof Player) {
+            if (sender.hasPermission("yggdrasil.cmd.spawn") || sender.isOp()) {
+                Player player = (Player) sender;
+                sendToSpawn(player);
+            }
+        } else {
+            sender.sendMessage("§cThis command is player-only!");
         }
 
         return false;

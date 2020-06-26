@@ -18,22 +18,26 @@ public class SetSpawnCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender.hasPermission("yggdrasil.cmd.setspawn") || sender.isOp()) {
-            Player player = (Player) sender;
-            Location loc = player.getLocation();
-            double posX = loc.getX();
-            double posY = loc.getY();
-            double posZ = loc.getZ();
-            player.sendMessage(posX + " " + posY + " " + posZ);
+        if(sender instanceof Player) {
+            if (sender.hasPermission("yggdrasil.cmd.setspawn") || sender.isOp()) {
+                Player player = (Player) sender;
+                Location loc = player.getLocation();
+                double posX = loc.getX();
+                double posY = loc.getY();
+                double posZ = loc.getZ();
+                player.sendMessage(posX + " " + posY + " " + posZ);
 
-            plugin.reloadConfig();
+                plugin.reloadConfig();
 
-            plugin.getConfig().set("spawn.x", posX);
-            plugin.getConfig().set("spawn.y", posY);
-            plugin.getConfig().set("spawn.z", posZ);
+                plugin.getConfig().set("spawn.x", posX);
+                plugin.getConfig().set("spawn.y", posY);
+                plugin.getConfig().set("spawn.z", posZ);
 
-            plugin.getConfig().options().copyDefaults(true);
-            plugin.saveConfig();
+                plugin.getConfig().options().copyDefaults(true);
+                plugin.saveConfig();
+            }
+        } else {
+            sender.sendMessage("§cThis command is player-only!");
         }
 
         return false;
