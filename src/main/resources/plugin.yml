@@ -39,7 +39,9 @@ permissions:
   yggdrasil.cmd.setspawn:
     description: Sets the spawn.
   yggdrasil.cmd.spawn:
-    description: Send the player to the spawn.
+    description: Sends the player to the spawn.
+  yggdrasil.cmd.spawn.others:
+    description: Sends a player to the spawn.
   yggdrasil.reload:
     description: Reloads the plugin.
   yggdrasil.heal:
