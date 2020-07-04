@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.utils.Theme;
 
@@ -26,12 +27,12 @@ public class HealCMD implements CommandExecutor {
                     if (plugin.getConfig().getBoolean("cmds.heal.feed_on_heal")) {
                         player.setFoodLevel(20);
                     }
-                    player.sendMessage(s + "You" + p + " got healed");
+                    player.sendMessage(MSG.youveBeenHealed);
                 } else {
-                    sender.sendMessage("§cYou don't have the permission to do that!");
+                    sender.sendMessage(MSG.noPermission);
                 }
             } else {
-                sender.sendMessage("§cThis command is player-only!");
+                sender.sendMessage(MSG.enterPlayer);
             }
         } else if(args.length == 1) {
             if(sender.hasPermission("yggdrasil.cmd.heal.others") || sender.isOp()) {
@@ -41,15 +42,15 @@ public class HealCMD implements CommandExecutor {
                     if (plugin.getConfig().getBoolean("cmds.heal.feed_on_heal")) {
                         player.setFoodLevel(20);
                     }
-                    sender.sendMessage(p + "You" + s + " healed " + p + args[0]);
+                    sender.sendMessage(MSG.youHealed.replaceAll("%play er%", p + args[0] + s));
                 } else {
-                    sender.sendMessage("§cThe player " + p + args[0] + "§c is not online!");
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[0]));
                 }
             } else {
-                sender.sendMessage("§cYou don't have the permission to do that!");
+                sender.sendMessage(MSG.noPermission);
             }
         } else {
-            sender.sendMessage("§cToo many args!");
+            sender.sendMessage(MSG.tooManyArgs);
         }
 
         return false;

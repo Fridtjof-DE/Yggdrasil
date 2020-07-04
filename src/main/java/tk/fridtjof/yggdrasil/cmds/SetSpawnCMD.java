@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.utils.Theme;
 
@@ -25,7 +26,7 @@ public class SetSpawnCMD implements CommandExecutor {
                 double posX = loc.getX();
                 double posY = loc.getY();
                 double posZ = loc.getZ();
-                player.sendMessage(posX + " " + posY + " " + posZ);
+                player.sendMessage(s + MSG.spawnSetTo + p + posX + " " + posY + " " + posZ);
 
                 plugin.reloadConfig();
 
@@ -37,7 +38,7 @@ public class SetSpawnCMD implements CommandExecutor {
                 plugin.saveConfig();
             }
         } else {
-            sender.sendMessage("§cThis command is player-only!");
+            sender.sendMessage(MSG.playerOnly);
         }
 
         return false;

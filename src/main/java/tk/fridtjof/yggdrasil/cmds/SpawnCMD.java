@@ -1,10 +1,12 @@
 package tk.fridtjof.yggdrasil.cmds;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.utils.Theme;
 
@@ -18,13 +20,29 @@ public class SpawnCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(sender instanceof Player) {
-            if (sender.hasPermission("yggdrasil.cmd.spawn") || sender.isOp()) {
-                Player player = (Player) sender;
+        if(args.length == 0) {
+            if (sender instanceof Player) {
+                if (sender.hasPermission("yggdrasil.cmd.spawn") || sender.isOp()) {
+                    Player player = (Player) sender;
+                    sendToSpawn(player);
+                    sender.sendMessage(MSG.sendToSpawn);
+                } else {
+                    sender.sendMessage(MSG.noPermission);
+                }
+            } else {
+                sender.sendMessage(MSG.enterPlayer);
+            }
+        } else if(args.length == 1) {
+            if (sender.hasPermission("yggdrasil.cmd.spawn.others") || sender.isOp()) {
+                Player player = Bukkit.getPlayer(args[0]);
                 sendToSpawn(player);
+                player.sendMessage(MSG.sendToSpawn);
+                sender.sendMessage(s + MSG.sendToSpawnOthers.replaceAll("%target%", p + args[0] + s));
+            } else {
+                sender.sendMessage(MSG.noPermission);
             }
         } else {
-            sender.sendMessage("§cThis command is player-only!");
+            sender.sendMessage(MSG.tooManyArgs);
         }
 
         return false;

@@ -5,6 +5,7 @@ api-version: 1.16
 authors: [Fridtjof_DE]
 description: An essential plugin
 website: https://www.fridtjof.tk/
+depend: [PuddingAPI]
 
 commands:
   monitor:
@@ -21,6 +22,10 @@ commands:
     description: Some Yggdrasil commands.
   heal:
     description: Heal.
+  day:
+    description: Sets time to day.
+  gm:
+    description: Set gamemode.
 
 permissions:
   yggdrasil.cmd.monitor:
@@ -45,3 +50,19 @@ permissions:
     description: Allows the user to user colors in chat.
   yggdrasil.chat.formatting_codes:
     description: Allows the user to user formatting codes in chat.
+  yggdrasil.gm.0:
+    description: /gm 0
+  yggdrasil.gm.0.others:
+    description: /gm 0 others
+  yggdrasil.gm.1:
+    description: /gm 1
+  yggdrasil.gm.1.others:
+    description: /gm 1 others
+  yggdrasil.gm.2:
+    description: /gm 2
+  yggdrasil.gm.2.others:
+    description: /gm 2 others
+  yggdrasil.gm.3:
+    description: /gm 3
+  yggdrasil.gm.3.others:
+    description: /gm 3 others

@@ -1,10 +1,12 @@
 package tk.fridtjof.yggdrasil;
 
-import tk.fridtjof.yggdrasil.utils.Log;
+import tk.fridtjof.puddingapi.bukkit.utils.Logger;
 
 public class Config {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
+
+    private static Logger logger = plugin.logger;
 
     public static void loadConfig() {
 
@@ -31,6 +33,6 @@ public class Config {
 
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();
-        Log.info("Successfully (re)loaded config.yml");
+        logger.info("Successfully (re)loaded config.yml");
     }
 }

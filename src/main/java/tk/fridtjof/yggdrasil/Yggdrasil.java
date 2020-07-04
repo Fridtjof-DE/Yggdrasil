@@ -1,12 +1,14 @@
 package tk.fridtjof.yggdrasil;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
+import tk.fridtjof.puddingapi.bukkit.utils.Logger;
+import tk.fridtjof.puddingapi.bukkit.utils.Metrics;
+import tk.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
 import tk.fridtjof.yggdrasil.cmds.*;
-import tk.fridtjof.yggdrasil.utils.Log;
-import tk.fridtjof.yggdrasil.utils.UpdateChecker;
 
 public final class Yggdrasil extends JavaPlugin {
+
+    //TODO /gm /day /night /noon etc /fly /speed
 
     private static Yggdrasil instance;
 
@@ -18,9 +20,10 @@ public final class Yggdrasil extends JavaPlugin {
         return instance;
     }
 
+    Logger logger = new Logger(this);
+
     @Override
     public void onEnable() {
-        Config.loadConfig();
 
         getServer().getPluginManager().registerEvents(new EventManager(), this);
         getCommand("monitor").setExecutor(new MonitorCMD());
@@ -30,11 +33,16 @@ public final class Yggdrasil extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCMD());
         getCommand("yggdrasil").setExecutor(new YggdrasilCMD());
         getCommand("heal").setExecutor(new HealCMD());
+        getCommand("gm").setExecutor(new GamemodeCMD());
+        getCommand("day").setExecutor(new DayCMD());
+        //getCommand("night").setExecutor(new DayCMD());
+        //getCommand("noon").setExecutor(new DayCMD());
+        //getCommand("day").setExecutor(new DayCMD());
 
-        int pluginId = 7954;
-        new Metrics(this, pluginId);
+        new UpdateChecker(this, 12253, "yggdrasil.update");
+        new Metrics(this, 7954);
 
-        Log.info("Thank you for using:\n" +
+        logger.info("Thank you for using:\n" +
                 " __   __                      _                        _   _ \n" +
                 " \\ \\ / /   __ _    __ _    __| |  _ __    __ _   ___  (_) | |\n" +
                 "  \\ V /   / _` |  / _` |  / _` | | '__|  / _` | / __| | | | |\n" +
@@ -42,9 +50,6 @@ public final class Yggdrasil extends JavaPlugin {
                 "   |_|    \\__, |  \\__, |  \\__,_| |_|     \\__,_| |___/ |_| |_|\n" +
                 "          |___/   |___/                                      \n\n" +
                 " ~Yggdrasil - Coded with love by @Fridtjof_DE\n");
-
-        UpdateChecker updateChecker = new UpdateChecker(this);
-        updateChecker.checkForUpdate();
     }
 
     @Override

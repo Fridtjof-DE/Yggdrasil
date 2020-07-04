@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class MsgCMD implements CommandExecutor {
@@ -18,7 +19,7 @@ public class MsgCMD implements CommandExecutor {
         if(sender.hasPermission("yggdrasil.msg") || sender.isOp()) {
 
             if (args.length == 1) {
-                sender.sendMessage("§cPlease enter a message!");
+                sender.sendMessage(MSG.enterMessage);
             } else if (args.length >= 2) {
 
                 Player target = Bukkit.getPlayer(args[0]);
@@ -37,11 +38,11 @@ public class MsgCMD implements CommandExecutor {
                     target.sendMessage(p + "[" + s + sender.getName() + p + "] " + s + ">>> " + p + "[" + s + "Me" + p + "]§r:" + msg);
 
                 } else if (!(target != null)) {
-                    sender.sendMessage("§cThe player " + p + args[0] + " §cis currently not online!");
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[0]));
                 }
             }
         } else {
-            sender.sendMessage("§cYou don't have the permission to do that!");
+            sender.sendMessage(MSG.noPermission);
         }
 
         return false;
