@@ -5,10 +5,17 @@ import tk.fridtjof.puddingapi.bukkit.utils.Logger;
 import tk.fridtjof.puddingapi.bukkit.utils.Metrics;
 import tk.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
 import tk.fridtjof.yggdrasil.cmds.*;
+import tk.fridtjof.yggdrasil.cmds.cheats.GamemodeCMD;
+import tk.fridtjof.yggdrasil.cmds.cheats.HeadCMD;
+import tk.fridtjof.yggdrasil.cmds.cheats.HealCMD;
+import tk.fridtjof.yggdrasil.cmds.time.DayCMD;
+import tk.fridtjof.yggdrasil.cmds.time.MidNightCMD;
+import tk.fridtjof.yggdrasil.cmds.time.NightCMD;
+import tk.fridtjof.yggdrasil.cmds.time.NoonCMD;
 
 public final class Yggdrasil extends JavaPlugin {
 
-    //TODO /gm /day /night /noon etc /fly /speed
+    //TODO etc /fly /speed
 
     private static Yggdrasil instance;
 
@@ -35,9 +42,9 @@ public final class Yggdrasil extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCMD());
         getCommand("gm").setExecutor(new GamemodeCMD());
         getCommand("day").setExecutor(new DayCMD());
-        //getCommand("night").setExecutor(new DayCMD());
-        //getCommand("noon").setExecutor(new DayCMD());
-        //getCommand("day").setExecutor(new DayCMD());
+        getCommand("night").setExecutor(new NightCMD());
+        getCommand("noon").setExecutor(new NoonCMD());
+        getCommand("midnight").setExecutor(new MidNightCMD());
 
         new UpdateChecker(this, 12253, "yggdrasil.update");
         new Metrics(this, 7954);

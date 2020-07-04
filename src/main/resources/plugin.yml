@@ -24,6 +24,12 @@ commands:
     description: Heal.
   day:
     description: Sets time to day.
+  night:
+    description: Sets time to night.
+  noon:
+    description: Sets time to noon.
+  midnight:
+    description: Sets time to midnight.
   gm:
     description: Set gamemode.
 
@@ -52,19 +58,27 @@ permissions:
     description: Allows the user to user colors in chat.
   yggdrasil.chat.formatting_codes:
     description: Allows the user to user formatting codes in chat.
-  yggdrasil.gm.0:
+  yggdrasil.cmd.gm.0:
     description: /gm 0
-  yggdrasil.gm.0.others:
+  yggdrasil.cmd.gm.0.others:
     description: /gm 0 others
-  yggdrasil.gm.1:
+  yggdrasil.cmd.gm.1:
     description: /gm 1
-  yggdrasil.gm.1.others:
+  yggdrasil.cmd.gm.1.others:
     description: /gm 1 others
-  yggdrasil.gm.2:
+  yggdrasil.cmd.gm.2:
     description: /gm 2
-  yggdrasil.gm.2.others:
+  yggdrasil.cmd.gm.2.others:
     description: /gm 2 others
-  yggdrasil.gm.3:
+  yggdrasil.cmd.gm.3:
     description: /gm 3
-  yggdrasil.gm.3.others:
+  yggdrasil.cmd.gm.3.others:
     description: /gm 3 others
+  yggdrasil.cmd.day:
+    description: Sets time to day.
+  yggdrasil.cmd.night:
+    description: Sets time to night.
+  yggdrasil.cmd.noon:
+    description: Sets time to noon.
+  yggdrasil.cmd.midnight:
+    description: Sets time to midnight.

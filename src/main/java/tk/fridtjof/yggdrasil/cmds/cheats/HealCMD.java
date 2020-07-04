@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds;
+package tk.fridtjof.yggdrasil.cmds.cheats;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

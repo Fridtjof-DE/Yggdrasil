@@ -1,8 +1,7 @@
-package tk.fridtjof.yggdrasil.cmds;
+package tk.fridtjof.yggdrasil.cmds.cheats;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -54,25 +53,25 @@ public class GamemodeCMD implements CommandExecutor {
         }
 
         if (args[0].equals("0")) {
-            if(sender.hasPermission("yggdrasil.gm.0" + s)) {
+            if(sender.hasPermission("yggdrasil.cmd.gm.0" + s)) {
                 player.setGameMode(GameMode.SURVIVAL);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
         } else if (args[0].equals("1")) {
-            if(sender.hasPermission("yggdrasil.gm.1" + s)) {
+            if(sender.hasPermission("yggdrasil.cmd.gm.1" + s)) {
                 player.setGameMode(GameMode.CREATIVE);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
         } else if (args[0].equals("2")) {
-            if(sender.hasPermission("yggdrasil.gm.2" + s)) {
+            if(sender.hasPermission("yggdrasil.cmd.gm.2" + s)) {
                 player.setGameMode(GameMode.ADVENTURE);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
         } else if (args[0].equals("3")) {
-            if(sender.hasPermission("yggdrasil.gm.3" + s)) {
+            if(sender.hasPermission("yggdrasil.cmd.gm.3" + s)) {
                 player.setGameMode(GameMode.SPECTATOR);
             } else {
                 sender.sendMessage(MSG.noPermission);
