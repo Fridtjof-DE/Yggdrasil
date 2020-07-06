@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds.cheats;
+package tk.fridtjof.yggdrasil.cmds.admin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -50,7 +50,7 @@ public class HealCMD implements CommandExecutor {
                 sender.sendMessage(MSG.noPermission);
             }
         } else {
-            sender.sendMessage(MSG.tooManyArgs);
+            sender.sendMessage(MSG.tooManyArguments);
         }
 
         return false;

@@ -1,14 +1,11 @@
-package tk.fridtjof.yggdrasil.cmds.cheats;
+package tk.fridtjof.yggdrasil.cmds.admin;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.SkullMeta;
 import tk.fridtjof.puddingapi.bukkit.items.PlayerHead;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
@@ -50,7 +47,7 @@ public class HeadCMD implements CommandExecutor {
                     sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[1]));
                 }
             } else {
-                sender.sendMessage(MSG.tooManyArgs);
+                sender.sendMessage(MSG.tooManyArguments);
             }
         } else {
             sender.sendMessage(MSG.noPermission);

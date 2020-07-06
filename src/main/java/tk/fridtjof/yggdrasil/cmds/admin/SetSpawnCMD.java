@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds;
+package tk.fridtjof.yggdrasil.cmds.admin;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;

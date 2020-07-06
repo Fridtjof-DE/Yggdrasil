@@ -3,7 +3,8 @@ package tk.fridtjof.yggdrasil;
 public class MSG {
 
     public static String noPermission = "§cYou don't have the permission to do that!";
-    public static String tooManyArgs = "§cToo many args!";
+    public static String tooManyArguments = "§cToo many arguments!";
+    public static String incorrectArgument = "§cIncorrect argument!!";
     public static String playerOnly = "§cThis command is player-only!";
 
     public static String enterGameMode = "§cEnter a gamemode!";

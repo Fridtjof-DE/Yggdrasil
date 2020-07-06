@@ -33,7 +33,7 @@ public class Templates {
                 setTimeInWorld(sender, args[0], ticks);
             }
         } else {
-            sender.sendMessage(MSG.tooManyArgs);
+            sender.sendMessage(MSG.tooManyArguments);
         }
     }
 

@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds;
+package tk.fridtjof.yggdrasil.cmds.user;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -42,7 +42,7 @@ public class SpawnCMD implements CommandExecutor {
                 sender.sendMessage(MSG.noPermission);
             }
         } else {
-            sender.sendMessage(MSG.tooManyArgs);
+            sender.sendMessage(MSG.tooManyArguments);
         }
 
         return false;

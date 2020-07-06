@@ -4,14 +4,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import tk.fridtjof.puddingapi.bukkit.utils.Logger;
 import tk.fridtjof.puddingapi.bukkit.utils.Metrics;
 import tk.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
-import tk.fridtjof.yggdrasil.cmds.*;
-import tk.fridtjof.yggdrasil.cmds.cheats.GamemodeCMD;
-import tk.fridtjof.yggdrasil.cmds.cheats.HeadCMD;
-import tk.fridtjof.yggdrasil.cmds.cheats.HealCMD;
-import tk.fridtjof.yggdrasil.cmds.time.DayCMD;
-import tk.fridtjof.yggdrasil.cmds.time.MidNightCMD;
-import tk.fridtjof.yggdrasil.cmds.time.NightCMD;
-import tk.fridtjof.yggdrasil.cmds.time.NoonCMD;
+import tk.fridtjof.yggdrasil.cmds.CommandManager;
+import tk.fridtjof.yggdrasil.events.EventManager;
 
 public final class Yggdrasil extends JavaPlugin {
 
@@ -29,23 +23,14 @@ public final class Yggdrasil extends JavaPlugin {
 
     Logger logger = new Logger(this);
 
+    public ConfigManager configManager;
+
     @Override
     public void onEnable() {
 
-        getServer().getPluginManager().registerEvents(new EventManager(), this);
-        getCommand("monitor").setExecutor(new MonitorCMD());
-        getCommand("head").setExecutor(new HeadCMD());
-        getCommand("msg").setExecutor(new MsgCMD());
-        getCommand("setspawn").setExecutor(new SetSpawnCMD());
-        getCommand("spawn").setExecutor(new SpawnCMD());
-        getCommand("yggdrasil").setExecutor(new YggdrasilCMD());
-        getCommand("heal").setExecutor(new HealCMD());
-        getCommand("gm").setExecutor(new GamemodeCMD());
-        getCommand("day").setExecutor(new DayCMD());
-        getCommand("night").setExecutor(new NightCMD());
-        getCommand("noon").setExecutor(new NoonCMD());
-        getCommand("midnight").setExecutor(new MidNightCMD());
-
+        configManager = new ConfigManager(this);
+        new EventManager(this);
+        new CommandManager(this);
         new UpdateChecker(this, 12253, "yggdrasil.update");
         new Metrics(this, 7954);
 

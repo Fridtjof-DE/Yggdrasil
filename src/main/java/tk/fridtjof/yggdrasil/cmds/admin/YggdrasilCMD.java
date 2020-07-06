@@ -1,9 +1,9 @@
-package tk.fridtjof.yggdrasil.cmds;
+package tk.fridtjof.yggdrasil.cmds.admin;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import tk.fridtjof.yggdrasil.Config;
+import tk.fridtjof.yggdrasil.ConfigManager;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.utils.Theme;
 
@@ -24,7 +24,7 @@ public class YggdrasilCMD implements CommandExecutor {
             if(args[0].equals("reload")) {
                 if(sender.hasPermission("") || sender.isOp()) {
                     sender.sendMessage("§eReloading the plugin...");
-                    Config.loadConfig();
+                    plugin.configManager.loadConfig();
                     sender.sendMessage("§aReload complete!");
                 }
             } else {

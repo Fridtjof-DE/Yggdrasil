@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds.cheats;
+package tk.fridtjof.yggdrasil.cmds.admin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -39,7 +39,7 @@ public class GamemodeCMD implements CommandExecutor {
         } else if(args.length == 0) {
             sender.sendMessage(MSG.enterGameMode);
         } else {
-            sender.sendMessage(MSG.tooManyArgs);
+            sender.sendMessage(MSG.tooManyArguments);
         }
 
         return false;
@@ -52,30 +52,32 @@ public class GamemodeCMD implements CommandExecutor {
             s = ".others";
         }
 
-        if (args[0].equals("0")) {
+        if (args[0].equals("0") || args[0].equals("survival")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.0" + s)) {
                 player.setGameMode(GameMode.SURVIVAL);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("1")) {
+        } else if (args[0].equals("1") || args[0].equals("creative")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.1" + s)) {
                 player.setGameMode(GameMode.CREATIVE);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("2")) {
+        } else if (args[0].equals("2") || args[0].equals("adventure")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.2" + s)) {
                 player.setGameMode(GameMode.ADVENTURE);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("3")) {
+        } else if (args[0].equals("3") || args[0].equals("spectator")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.3" + s)) {
                 player.setGameMode(GameMode.SPECTATOR);
             } else {
                 sender.sendMessage(MSG.noPermission);
             }
+        } else {
+            sender.sendMessage(MSG.incorrectArgument);
         }
     }
 }

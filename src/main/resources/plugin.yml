@@ -14,6 +14,10 @@ commands:
     description: Gets a player's head.
   msg:
     description: Sends a message to player.
+  tell:
+    description: Sends a message to player.
+  whisper:
+    description: Sends a message to player.
   setspawn:
     description: Sets the spawn.
   spawn:
@@ -31,6 +35,8 @@ commands:
   midnight:
     description: Sets time to midnight.
   gm:
+    description: Set gamemode.
+  gamemode:
     description: Set gamemode.
 
 permissions:

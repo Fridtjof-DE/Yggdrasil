@@ -1,17 +1,27 @@
 package tk.fridtjof.yggdrasil;
 
+import org.bukkit.plugin.java.JavaPlugin;
 import tk.fridtjof.puddingapi.bukkit.utils.Logger;
 
-public class Config {
+public class ConfigManager {
 
-    static Yggdrasil plugin = Yggdrasil.getInstance();
+    JavaPlugin plugin;
 
-    private static Logger logger = plugin.logger;
+    private Logger logger;
 
-    public static void loadConfig() {
+    public ConfigManager(JavaPlugin plugin) {
+        this.plugin = plugin;
+        logger = new Logger(plugin);
+        loadConfig();
+    }
+
+    public void loadConfig() {
 
         plugin.reloadConfig();
         plugin.getConfig().options().header("This is the main configuration file - Read the wiki for help!");
+
+        plugin.getConfig().addDefault("tablist.header", "&bTablist Header");
+        plugin.getConfig().addDefault("tablist.footer", "&bTablist Footer");
 
         plugin.getConfig().addDefault("theme.primary", "&b");
         plugin.getConfig().addDefault("theme.secondary", "&f");
