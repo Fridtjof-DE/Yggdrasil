@@ -9,6 +9,7 @@ public class MSG {
 
     public static String enterGameMode = "§cEnter a gamemode!";
     public static String enterWord = "§cPlease enter a world!";
+    public static String enterValue = "§cPlease enter a value!";
 
     public static String playerNotFound = "§cThe player %player% §cwas not found!";
     public static String worldNotFound = "§cThe world %world% §cwas not found!";
@@ -23,6 +24,12 @@ public class MSG {
 
     public static String youveBeenHealed = "You've been healed!";
     public static String youHealed = "You healed %player%!";
+
+    public static String toggledFly = "You've toggled fly!";
+    public static String youToggledFly = "You've toggled fly for %player%!";
+
+    public static String setFlySpeed = "You've set %player% fly-speed for to %speed%!";
+    public static String setWalkSpeed = "You've set %player% walk-speed for to %speed%!";
 
     public static String enterMessage = "§cPlease enter a message!";
 

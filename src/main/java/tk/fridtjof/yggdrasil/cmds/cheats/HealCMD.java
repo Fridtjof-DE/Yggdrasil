@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds.admin;
+package tk.fridtjof.yggdrasil.cmds.cheats;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -42,9 +42,9 @@ public class HealCMD implements CommandExecutor {
                     if (plugin.getConfig().getBoolean("cmds.heal.feed_on_heal")) {
                         player.setFoodLevel(20);
                     }
-                    sender.sendMessage(MSG.youHealed.replaceAll("%play er%", p + args[0] + s));
+                    sender.sendMessage(s + MSG.youHealed.replaceAll("%player%", p + args[0] + s));
                 } else {
-                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[0]));
+                    sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[0] + s));
                 }
             } else {
                 sender.sendMessage(MSG.noPermission);

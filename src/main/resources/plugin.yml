@@ -38,6 +38,10 @@ commands:
     description: Set gamemode.
   gamemode:
     description: Set gamemode.
+  fly:
+    description: Toggle fly.
+  speed:
+    description: Set speed.
 
 permissions:
   yggdrasil.cmd.monitor:
@@ -88,3 +92,7 @@ permissions:
     description: Sets time to noon.
   yggdrasil.cmd.midnight:
     description: Sets time to midnight.
+  yggdrasil.cmd.speed:
+    description: Set a your speed.
+  yggdrasil.cmd.speed.others:
+    description: Set a player's speed.

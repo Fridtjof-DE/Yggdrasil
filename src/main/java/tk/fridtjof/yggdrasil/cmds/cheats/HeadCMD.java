@@ -1,4 +1,4 @@
-package tk.fridtjof.yggdrasil.cmds.admin;
+package tk.fridtjof.yggdrasil.cmds.cheats;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -44,7 +44,7 @@ public class HeadCMD implements CommandExecutor {
                     addHeadToInv(player, args[0]);
                     sender.sendMessage(s + MSG.gaveHead.replaceAll("%target%", p + args[1] + s).replaceAll("%head%", p + args[0] + s));
                 } else {
-                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[1]));
+                    sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[1]) + s);
                 }
             } else {
                 sender.sendMessage(MSG.tooManyArguments);
