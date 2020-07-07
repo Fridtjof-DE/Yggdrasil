@@ -31,7 +31,7 @@ public final class Yggdrasil extends JavaPlugin {
         configManager = new ConfigManager(this);
         new EventManager(this);
         new CommandManager(this);
-        new UpdateChecker(this, 12253, "yggdrasil.update");
+        new UpdateChecker(this, 81151, "yggdrasil.update");
         new Metrics(this, 7954);
 
         logger.info("Thank you for using:\n" +

@@ -5,10 +5,13 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerPreLoginEvent;
+import tk.fridtjof.puddingapi.bukkit.chat.ChatAPI;
 import tk.fridtjof.yggdrasil.MSG;
+import tk.fridtjof.yggdrasil.Yggdrasil;
 
 public class Templates {
+
+    static Yggdrasil plugin = Yggdrasil.getInstance();
 
     static String p = Theme.getPrimary();
     static String s = Theme.getSecondary();

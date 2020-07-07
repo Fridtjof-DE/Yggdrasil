@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import tk.fridtjof.puddingapi.bukkit.chat.ChatAPI;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.cmds.user.SpawnCMD;
+import tk.fridtjof.yggdrasil.utils.Templates;
 
 public class OnJoin implements Listener {
 
@@ -16,9 +17,7 @@ public class OnJoin implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        //TitleAPI.sendTitle(player, "Test dasd a");
-
-        player.setPlayerListHeaderFooter(ChatAPI.format(plugin.getConfig().getString("tablist.header")), ChatAPI.format(plugin.getConfig().getString("tablist.footer")));
+        Templates.sendTabList();
 
         if(plugin.getConfig().getBoolean("spawn.tp_on_join")) {
             SpawnCMD.sendToSpawn(player);
