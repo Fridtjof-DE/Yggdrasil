@@ -8,6 +8,7 @@ import tk.fridtjof.yggdrasil.cmds.cheats.HealCMD;
 import tk.fridtjof.yggdrasil.cmds.cheats.SpeedCMD;
 import tk.fridtjof.yggdrasil.cmds.mod.TimeCMD;
 import tk.fridtjof.yggdrasil.cmds.user.MsgCMD;
+import tk.fridtjof.yggdrasil.cmds.user.RulesCMD;
 import tk.fridtjof.yggdrasil.cmds.user.SpawnCMD;
 
 public class CommandManager {
@@ -36,6 +37,7 @@ public class CommandManager {
         plugin.getCommand("tell").setExecutor(new MsgCMD());
         plugin.getCommand("whisper").setExecutor(new MsgCMD());
         plugin.getCommand("spawn").setExecutor(new SpawnCMD());
+        plugin.getCommand("rules").setExecutor(new RulesCMD());
 
         //CHEATS
         plugin.getCommand("head").setExecutor(new HeadCMD());

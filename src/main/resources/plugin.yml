@@ -42,6 +42,8 @@ commands:
     description: Toggle fly.
   speed:
     description: Set speed.
+  rules:
+    description: View rules.
 
 permissions:
   yggdrasil.cmd.monitor:
@@ -96,3 +98,5 @@ permissions:
     description: Set a your speed.
   yggdrasil.cmd.speed.others:
     description: Set a player's speed.
+  yggdrasil.cmd.rules:
+    description: View rules.

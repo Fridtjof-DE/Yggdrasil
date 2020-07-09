@@ -41,6 +41,14 @@ public class ConfigManager {
 
         plugin.getConfig().addDefault("cmds.heal.feed_on_heal", true);
 
+        plugin.getConfig().addDefault("info.rules", "§lRegeln:§r\n" +
+                "0. Fridtjof_DE ist der Boss\n" +
+                "1. Fischies ist vogelfrei\n" +
+                "2. Keiner hat mehr Tode als Fornox\n" +
+                "3. Kein Griefing\n" +
+                "4. Kein Klauen\n" +
+                "5. Keine Kämpfe ohne Absprache");
+
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();
         logger.info("Successfully (re)loaded config.yml");

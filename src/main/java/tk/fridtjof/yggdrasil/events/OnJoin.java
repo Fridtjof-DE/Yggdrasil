@@ -17,7 +17,7 @@ public class OnJoin implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        Templates.sendTabList();
+        ChatAPI.sendTabList(plugin.getConfig().getString("tablist.header"), plugin.getConfig().getString("tablist.footer"));
 
         if(plugin.getConfig().getBoolean("spawn.tp_on_join")) {
             SpawnCMD.sendToSpawn(player);
