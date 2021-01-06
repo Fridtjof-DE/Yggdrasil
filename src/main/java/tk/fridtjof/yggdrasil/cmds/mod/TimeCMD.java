@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import tk.fridtjof.yggdrasil.utils.Templates;
 
 public class TimeCMD implements CommandExecutor {
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
