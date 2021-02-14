@@ -17,14 +17,14 @@ public class OnJoin implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        ChatAPI.sendTabList(plugin.getConfig().getString("tablist.header"), plugin.getConfig().getString("tablist.footer"));
+        ChatAPI.sendTabList(plugin.configManager.messagesFile.getConfig().getString("tablist.header"), plugin.configManager.messagesFile.getConfig().getString("tablist.footer"));
 
-        if(plugin.getConfig().getBoolean("spawn.tp_on_join")) {
+        if(plugin.configManager.mainConfig.getConfig().getBoolean("spawn.tp_on_join")) {
             SpawnCMD.sendToSpawn(player);
         }
 
-        if(plugin.getConfig().getBoolean("chat.custom_join_quit_msg")) {
-            String joinMSG = plugin.getConfig().getString("chat.join_msg");
+        if(plugin.configManager.mainConfig.getConfig().getBoolean("chat.custom_join_quit_msg")) {
+            String joinMSG = plugin.configManager.messagesFile.getConfig().getString("chat.join_msg");
             event.setJoinMessage(joinMSG.replaceAll("%player%", player.getDisplayName()));
         }
     }

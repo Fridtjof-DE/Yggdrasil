@@ -16,10 +16,10 @@ public class OnQuit implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        ChatAPI.sendTabList(plugin.getConfig().getString("tablist.header"), plugin.getConfig().getString("tablist.footer"));
+        ChatAPI.sendTabList(plugin.configManager.messagesFile.getConfig().getString("tablist.header"), plugin.configManager.messagesFile.getConfig().getString("tablist.footer"));
 
-        if(plugin.getConfig().getBoolean("chat.custom_join_quit_msg")) {
-            String quitMSG = plugin.getConfig().getString("chat.quit_msg");
+        if(plugin.configManager.mainConfig.getConfig().getBoolean("chat.custom_join_quit_msg")) {
+            String quitMSG = plugin.configManager.messagesFile.getConfig().getString("chat.quit_msg");
             event.setQuitMessage(quitMSG.replaceAll("%player%", player.getDisplayName()));
         }
     }

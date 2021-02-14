@@ -13,9 +13,9 @@ public class OnMove implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
-        if (plugin.getConfig().getBoolean("spawn.auto_tp.enable")) {
+        if (plugin.configManager.mainConfig.getConfig().getBoolean("spawn.auto_tp.enable")) {
             Player player = event.getPlayer();
-            if (player.getLocation().getY() <= plugin.getConfig().getDouble("spawn.auto_tp.y")) {
+            if (player.getLocation().getY() <= plugin.configManager.mainConfig.getConfig().getDouble("spawn.auto_tp.y")) {
                 SpawnCMD.sendToSpawn(player);
             }
         }

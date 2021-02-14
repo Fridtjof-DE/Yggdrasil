@@ -21,7 +21,7 @@ public class RulesCMD implements CommandExecutor {
 
         if(sender.hasPermission("yggdrasil.cmd.rules") || sender.isOp()) {
 
-            sender.sendMessage(plugin.getConfig().getString("info.rules"));
+            sender.sendMessage(plugin.configManager.messagesFile.getConfig().getString("info.rules"));
 
         } else {
             sender.sendMessage(MSG.noPermission);

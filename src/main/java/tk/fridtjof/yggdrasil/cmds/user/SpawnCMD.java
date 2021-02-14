@@ -49,9 +49,9 @@ public class SpawnCMD implements CommandExecutor {
     }
 
     public static void sendToSpawn(Player player) {
-        double posX = plugin.getConfig().getDouble("spawn.x");
-        double posY = plugin.getConfig().getDouble("spawn.y");
-        double posZ = plugin.getConfig().getDouble("spawn.z");
+        double posX = plugin.configManager.dataFile.getConfig().getDouble("spawn.x");
+        double posY = plugin.configManager.dataFile.getConfig().getDouble("spawn.y");
+        double posZ = plugin.configManager.dataFile.getConfig().getDouble("spawn.z");
 
         Location loc = new Location(player.getWorld(), posX, posY, posZ);
         player.teleport(loc);

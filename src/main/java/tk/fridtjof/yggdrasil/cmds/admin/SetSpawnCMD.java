@@ -28,14 +28,12 @@ public class SetSpawnCMD implements CommandExecutor {
                 double posZ = loc.getZ();
                 player.sendMessage(s + MSG.spawnSetTo + p + posX + " " + posY + " " + posZ);
 
-                plugin.reloadConfig();
+                plugin.configManager.dataFile.getConfig().set("spawn.x", posX);
+                plugin.configManager.dataFile.getConfig().set("spawn.y", posY);
+                plugin.configManager.dataFile.getConfig().set("spawn.z", posZ);
 
-                plugin.getConfig().set("spawn.x", posX);
-                plugin.getConfig().set("spawn.y", posY);
-                plugin.getConfig().set("spawn.z", posZ);
-
-                plugin.getConfig().options().copyDefaults(true);
-                plugin.saveConfig();
+                plugin.configManager.dataFile.getConfig().options().copyDefaults(true);
+                plugin.configManager.dataFile.save();
             }
         } else {
             sender.sendMessage(MSG.playerOnly);
