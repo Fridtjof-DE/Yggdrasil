@@ -8,14 +8,10 @@ import org.bukkit.entity.Player;
 import tk.fridtjof.puddingapi.bukkit.player.PlayerAPI;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class FlyCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -37,9 +33,9 @@ public class FlyCMD implements CommandExecutor {
                 Player player = Bukkit.getPlayer(args[0]);
                 if(player != null) {
                     PlayerAPI.toggleFly(player);
-                    sender.sendMessage(s + MSG.youToggledFly.replaceAll("%player%", p + args[0] + s));
+                    sender.sendMessage(MSG.youToggledFly.replaceAll("%player%", args[0]));
                 } else {
-                    sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[0]) + s);
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
                 }
             } else {
                 sender.sendMessage(MSG.noPermission);

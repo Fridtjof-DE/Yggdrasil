@@ -5,18 +5,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import tk.fridtjof.puddingapi.bukkit.player.PlayerAPI;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
 import tk.fridtjof.yggdrasil.utils.Templates;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class SpeedCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -56,7 +51,7 @@ public class SpeedCMD implements CommandExecutor {
                     Templates.setSpeed(sender, args, player);
                 }
             } else {
-                sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[0] + s));
+                sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
             }
 
         } else {

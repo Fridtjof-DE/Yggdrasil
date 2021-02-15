@@ -9,7 +9,6 @@ import org.bukkit.inventory.PlayerInventory;
 import tk.fridtjof.puddingapi.bukkit.items.PlayerHead;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class HeadCMD implements CommandExecutor {
 
@@ -18,9 +17,6 @@ public class HeadCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        String p = Theme.getPrimary();
-        String s = Theme.getSecondary();
-
         if(sender.hasPermission("yggdrasil.cmd.head") || sender.isOp()) {
 
             if(args.length == 0) {
@@ -28,7 +24,7 @@ public class HeadCMD implements CommandExecutor {
 
                     Player player = (Player) sender;
                     addHeadToInv(player, player.getName());
-                    sender.sendMessage(s + MSG.heresYourHead);
+                    sender.sendMessage(MSG.heresYourHead);
                 } else {
                     sender.sendMessage(MSG.enterPlayer);
                 }
@@ -36,15 +32,14 @@ public class HeadCMD implements CommandExecutor {
 
                 Player player = (Player) sender;
                 addHeadToInv(player, args[0]);
-                sender.sendMessage(s + MSG.heresHeadOf.replaceAll("%player%", p + args[0] + s));
+                sender.sendMessage(MSG.heresHeadOf.replaceAll("%player%", args[0]));
 
             } else if (args.length == 2) {
                 Player player = Bukkit.getPlayer(args[1]);
                 if(player != null) {
                     addHeadToInv(player, args[0]);
-                    sender.sendMessage(s + MSG.gaveHead.replaceAll("%target%", p + args[1] + s).replaceAll("%head%", p + args[0] + s));
-                } else {
-                    sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[1]) + s);
+                    sender.sendMessage(MSG.gaveHead.replaceAll("%target%",args[1]).replaceAll("%head%", args[0]));
+                } else {MSG.playerNotFound.replaceAll("%player%", args[1]);
                 }
             } else {
                 sender.sendMessage(MSG.tooManyArguments);

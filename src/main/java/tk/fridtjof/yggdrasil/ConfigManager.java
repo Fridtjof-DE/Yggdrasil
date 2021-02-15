@@ -14,6 +14,7 @@ public class ConfigManager {
     public ConfigManager(JavaPlugin plugin) {
         this.plugin = plugin;
         logger = new Logger(plugin);
+        reloadConfigs();
     }
 
     public void reloadConfigs() {
@@ -48,6 +49,8 @@ public class ConfigManager {
         mainConfig.getConfig().addDefault("chat.custom_join_quit_msg", true);
 
         mainConfig.getConfig().addDefault("cmds.heal.feed_on_heal", true);
+
+        mainConfig.getConfig().addDefault("yggdrasil.show_logo_on_startup", true);
 
         mainConfig.getConfig().options().copyDefaults(true);
         mainConfig.save();

@@ -8,14 +8,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class GamemodeCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -32,7 +28,7 @@ public class GamemodeCMD implements CommandExecutor {
             Player player = Bukkit.getPlayer(args[1]);
 
             if (player == null) {
-                sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[1]));
+                sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[1]));
             } else {
                 setGamemodes(sender, args, player, true);
             }

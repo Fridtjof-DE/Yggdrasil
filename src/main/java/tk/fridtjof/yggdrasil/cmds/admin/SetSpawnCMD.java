@@ -7,14 +7,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class SetSpawnCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -26,7 +22,7 @@ public class SetSpawnCMD implements CommandExecutor {
                 double posX = loc.getX();
                 double posY = loc.getY();
                 double posZ = loc.getZ();
-                player.sendMessage(s + MSG.spawnSetTo + p + posX + " " + posY + " " + posZ);
+                player.sendMessage(MSG.spawnSetTo + posX + " " + posY + " " + posZ);
 
                 plugin.configManager.dataFile.getConfig().set("spawn.x", posX);
                 plugin.configManager.dataFile.getConfig().set("spawn.y", posY);

@@ -7,14 +7,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import tk.fridtjof.yggdrasil.MSG;
 import tk.fridtjof.yggdrasil.Yggdrasil;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class HealCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -42,9 +38,9 @@ public class HealCMD implements CommandExecutor {
                     if (plugin.getConfig().getBoolean("cmds.heal.feed_on_heal")) {
                         player.setFoodLevel(20);
                     }
-                    sender.sendMessage(s + MSG.youHealed.replaceAll("%player%", p + args[0] + s));
+                    sender.sendMessage(MSG.youHealed.replaceAll("%player%", args[0]));
                 } else {
-                    sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[0] + s));
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
                 }
             } else {
                 sender.sendMessage(MSG.noPermission);

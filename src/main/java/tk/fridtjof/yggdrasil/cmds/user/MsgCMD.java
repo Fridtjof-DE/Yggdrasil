@@ -6,12 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import tk.fridtjof.yggdrasil.MSG;
-import tk.fridtjof.yggdrasil.utils.Theme;
 
 public class MsgCMD implements CommandExecutor {
-
-    String p = Theme.getPrimary();
-    String s = Theme.getSecondary();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -34,11 +30,11 @@ public class MsgCMD implements CommandExecutor {
                         i = i + 1;
                     }
 
-                    sender.sendMessage(p + "[" + s + "Me" + p + "] " + s + ">>> " + p + "[" + s + target.getName() + p + "]§r:" + msg);
-                    target.sendMessage(p + "[" + s + sender.getName() + p + "] " + s + ">>> " + p + "[" + s + "Me" + p + "]§r:" + msg);
+                    sender.sendMessage("[" + "Me" + "] " + ">>> " + "[" + target.getName() + "]§r:" + msg);
+                    target.sendMessage("[" + sender.getName() + "] " + ">>> " + "[" + "Me" + "]§r:" + msg);
 
                 } else if (!(target != null)) {
-                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", p + args[0]));
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
                 }
             }
         } else {

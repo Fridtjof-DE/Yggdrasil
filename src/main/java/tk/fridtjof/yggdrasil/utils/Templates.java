@@ -13,9 +13,6 @@ public class Templates {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
-    static String p = Theme.getPrimary();
-    static String s = Theme.getSecondary();
-
     public static void timeCommand(CommandSender sender, Command command, String[] args, int ticks) {
         if(args.length == 0) {
             if (sender instanceof Player) {
@@ -44,17 +41,17 @@ public class Templates {
     private static void setTimeInWorld(CommandSender sender, String worldName, int ticks) {
         World world = Bukkit.getWorld(worldName);
         if(world == null) {
-            sender.sendMessage(s + MSG.worldNotFound.replaceAll("%world%", p + worldName + s));
+            sender.sendMessage(MSG.worldNotFound.replaceAll("%world%", worldName));
         } else {
             long time = ticks;
             world.setTime(time);
-            sender.sendMessage(s + MSG.timeSet.replaceAll("%time%", p + time + s).replaceAll("%world%", p + worldName + s));
+            sender.sendMessage(MSG.timeSet.replaceAll("%time%", Long.toString(time)).replaceAll("%world%", worldName));
         }
     }
 
     public static void setSpeed(CommandSender sender, String[] args, Player player) {
         if (player == null) {
-            sender.sendMessage(s + MSG.playerNotFound.replaceAll("%player%", p + args[0] + s));
+            sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
         } else {
             float speed = Float.parseFloat(args[0]) / 5F;
             if (speed <= 1F && speed >= -1F) {
@@ -72,10 +69,10 @@ public class Templates {
 
                 if (player.isFlying()) {
                     player.setFlySpeed(speed);
-                    sender.sendMessage(s + MSG.setFlySpeed.replaceAll("%speed%", p + args[0] + s).replaceAll("%player%", p + name + s));
+                    sender.sendMessage(MSG.setFlySpeed.replaceAll("%speed%", args[0]).replaceAll("%player%", name));
                 } else {
                     player.setWalkSpeed(speed);
-                    sender.sendMessage(s + MSG.setWalkSpeed.replaceAll("%speed%", p + args[0] + s).replaceAll("%player%", p + name + s));
+                    sender.sendMessage(MSG.setWalkSpeed.replaceAll("%speed%", args[0]).replaceAll("%player%", name));
                 }
 
             } else {
