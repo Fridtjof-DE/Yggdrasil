@@ -34,14 +34,9 @@ public final class Yggdrasil extends JavaPlugin {
         new UpdateChecker(this, 81151, "yggdrasil.update");
         new Metrics(this, 7954);
 
-        logger.info("Thank you for using:\n" +
-                " __   __                      _                        _   _ \n" +
-                " \\ \\ / /   __ _    __ _    __| |  _ __    __ _   ___  (_) | |\n" +
-                "  \\ V /   / _` |  / _` |  / _` | | '__|  / _` | / __| | | | |\n" +
-                "   | |   | (_| | | (_| | | (_| | | |    | (_| | \\__ \\ | | | |\n" +
-                "   |_|    \\__, |  \\__, |  \\__,_| |_|     \\__,_| |___/ |_| |_|\n" +
-                "          |___/   |___/                                      \n\n" +
-                " ~Yggdrasil - Coded with love by @Fridtjof_DE\n");
+        if(configManager.mainConfig.getConfig().getBoolean("yggdrasil.show_logo_on_startup")) {
+            logger.info(MSG.startupLogo);
+        }
     }
 
     @Override

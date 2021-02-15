@@ -35,4 +35,13 @@ public class MSG {
     public static String spawnSetTo = plugin.configManager.messagesFile.getConfig().getString("spawn.set_spawn");
     public static String sendToSpawn = plugin.configManager.messagesFile.getConfig().getString("spawn.spawn");
     public static String sendToSpawnOthers = plugin.configManager.messagesFile.getConfig().getString("spawn.spawn_others");
+
+    public static String startupLogo = "Thank you for using:\n" +
+            " __   __                      _                        _   _ \n" +
+            " \\ \\ / /   __ _    __ _    __| |  _ __    __ _   ___  (_) | |\n" +
+            "  \\ V /   / _` |  / _` |  / _` | | '__|  / _` | / __| | | | |\n" +
+            "   | |   | (_| | | (_| | | (_| | | |    | (_| | \\__ \\ | | | |\n" +
+            "   |_|    \\__, |  \\__, |  \\__,_| |_|     \\__,_| |___/ |_| |_|\n" +
+            "          |___/   |___/                                      \n\n" +
+            " ~Yggdrasil - Coded with love by @Fridtjof_DE\n";
 }
