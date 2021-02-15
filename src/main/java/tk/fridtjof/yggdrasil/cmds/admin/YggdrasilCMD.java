@@ -24,7 +24,7 @@ public class YggdrasilCMD implements CommandExecutor {
             if(args[0].equals("reload")) {
                 if(sender.hasPermission("") || sender.isOp()) {
                     sender.sendMessage("§eReloading the plugin...");
-                    plugin.configManager.loadMainConfig();
+                    plugin.configManager.reloadConfigs();
                     sender.sendMessage("§aReload complete!");
                 }
             } else {

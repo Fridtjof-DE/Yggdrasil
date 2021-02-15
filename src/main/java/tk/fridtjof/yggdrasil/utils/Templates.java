@@ -24,7 +24,7 @@ public class Templates {
                     setTimeInWorld(player, player.getWorld().getName(), ticks);
                 }
             } else {
-                sender.sendMessage(MSG.enterWord);
+                sender.sendMessage(MSG.enterWorld);
             }
         } else if(args.length == 1) {
             if (sender instanceof Player) {
