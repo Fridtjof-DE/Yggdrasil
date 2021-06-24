@@ -1,10 +1,10 @@
 name: Yggdrasil
 version: ${project.version}
 main: tk.fridtjof.yggdrasil.Yggdrasil
-api-version: 1.16
+api-version: 1.17
 authors: [Fridtjof_DE]
 description: An essential plugin
-website: https://www.fridtjof.tk/
+website: https://www.fridtjof.me/
 depend: [PuddingAPI]
 
 commands:
