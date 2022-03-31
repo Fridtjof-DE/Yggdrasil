@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import me.fridtjof.yggdrasil.Yggdrasil;
 
-public class OnChat implements Listener {
+public class OnAsyncPlayerChatEvent implements Listener {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 

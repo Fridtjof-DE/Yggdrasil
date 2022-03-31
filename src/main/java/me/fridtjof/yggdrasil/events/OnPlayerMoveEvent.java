@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import me.fridtjof.yggdrasil.cmds.user.SpawnCMD;
 
-public class OnMove implements Listener {
+public class OnPlayerMoveEvent implements Listener {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 

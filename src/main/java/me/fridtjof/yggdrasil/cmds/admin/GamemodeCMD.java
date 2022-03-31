@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
+import me.fridtjof.puddingapi.bukkit.utils.TabCompleter;
 import me.fridtjof.yggdrasil.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
@@ -9,12 +10,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GamemodeCMD implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+
+        tabComplete(label);
 
         if (args.length == 1) {
             if (sender instanceof Player) {
@@ -75,5 +81,18 @@ public class GamemodeCMD implements CommandExecutor {
         } else {
             sender.sendMessage(MSG.incorrectArgument);
         }
+    }
+
+    private void tabComplete(String label) {
+        /*List<String> arguments = new ArrayList<String>();
+        arguments.add("creative");
+        arguments.add("survival");
+        arguments.add("spectator");
+        arguments.add("adventure");
+        arguments.add("1");
+        arguments.add("0");
+        arguments.add("3");
+        arguments.add("2");
+        plugin.getCommand(label).setTabCompleter(new TabCompleter(1, arguments));*/
     }
 }

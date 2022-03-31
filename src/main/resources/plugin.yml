@@ -1,11 +1,13 @@
 name: Yggdrasil
 version: ${project.version}
 main: me.fridtjof.yggdrasil.Yggdrasil
-api-version: 1.17
+api-version: 1.18
+prefix: Yggdrasil
 authors: [Fridtjof_DE]
 description: An essential plugin
 website: https://www.fridtjof.me/
-depend: [PuddingAPI]
+depend: [PuddingAPI, PlaceholderAPI]
+softdepend: [Plan]
 
 commands:
   monitor:
@@ -44,6 +46,8 @@ commands:
     description: Set speed.
   rules:
     description: View rules.
+  easteregg:
+    description: /easteregg
 
 permissions:
   yggdrasil.cmd.monitor:
@@ -62,6 +66,8 @@ permissions:
     description: Sends a player to the spawn.
   yggdrasil.reload:
     description: Reloads the plugin.
+  yggdrasil.info:
+    description: Info about the plugin.
   yggdrasil.heal:
     description: Heal.
   yggdrasil.cmd.heal.others:
@@ -100,3 +106,13 @@ permissions:
     description: Set a player's speed.
   yggdrasil.cmd.rules:
     description: View rules.
+  yggdrasil.lobby.bypass_no_pvp:
+    description: Bypass no PvP in lobby.
+  yggdrasil.lobby.bypass_no_pve:
+    description: Bypass no PvE in lobby.
+  yggdrasil.lobby.bypass_no_item_dropping:
+    description: Bypass no item dropping in lobby.
+  yggdrasil.lobby.bypass_lobby_item_clearing:
+    description: Bypass item clearing in lobby.
+  yggdrasil.cmd.easteregg:
+    description: Use /easteregg.

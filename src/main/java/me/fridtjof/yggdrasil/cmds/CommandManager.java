@@ -1,9 +1,7 @@
 package me.fridtjof.yggdrasil.cmds;
 
-import me.fridtjof.yggdrasil.cmds.admin.GamemodeCMD;
-import me.fridtjof.yggdrasil.cmds.admin.MonitorCMD;
-import me.fridtjof.yggdrasil.cmds.admin.SetSpawnCMD;
-import me.fridtjof.yggdrasil.cmds.admin.YggdrasilCMD;
+import me.fridtjof.puddingapi.bukkit.utils.TabCompleter;
+import me.fridtjof.yggdrasil.cmds.admin.*;
 import me.fridtjof.yggdrasil.cmds.mod.TimeCMD;
 import org.bukkit.plugin.java.JavaPlugin;
 import me.fridtjof.yggdrasil.cmds.cheats.FlyCMD;
@@ -13,6 +11,11 @@ import me.fridtjof.yggdrasil.cmds.cheats.SpeedCMD;
 import me.fridtjof.yggdrasil.cmds.user.MsgCMD;
 import me.fridtjof.yggdrasil.cmds.user.RulesCMD;
 import me.fridtjof.yggdrasil.cmds.user.SpawnCMD;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CommandManager {
 
@@ -28,6 +31,7 @@ public class CommandManager {
         plugin.getCommand("yggdrasil").setExecutor(new YggdrasilCMD());
         plugin.getCommand("gm").setExecutor(new GamemodeCMD());
         plugin.getCommand("gamemode").setExecutor(new GamemodeCMD());
+        plugin.getCommand("easteregg").setExecutor(new EasterEggCMD());
 
         //MOD
         plugin.getCommand("day").setExecutor(new TimeCMD());

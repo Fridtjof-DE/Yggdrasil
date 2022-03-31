@@ -11,10 +11,16 @@ public class EventManager implements Listener {
     }
 
     private void registerListeners(JavaPlugin plugin) {
-        getServer().getPluginManager().registerEvents(new OnJoin(), plugin);
-        getServer().getPluginManager().registerEvents(new OnMove(), plugin);
-        getServer().getPluginManager().registerEvents(new OnChat(), plugin);
-        getServer().getPluginManager().registerEvents(new OnQuit(), plugin);
-        getServer().getPluginManager().registerEvents(new OnRespawn(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerJoinEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerMoveEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerQuitEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerRespawnEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnEntityDamageEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnEntityDamageByEntityEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnFoodLevelChangeEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerDropItemEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnPlayerInteractEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnInventoryClickEvent(), plugin);
+        getServer().getPluginManager().registerEvents(new OnAsyncPlayerChatEvent(), plugin);
     }
 }
