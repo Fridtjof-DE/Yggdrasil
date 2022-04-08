@@ -26,7 +26,7 @@ public class Lobby {
 
     public static void HotbarItems(Player player) {
         if(plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.compass.enable")) {
-            if(plugin.configManager.mainConfig.getConfig().getBoolean("lobby.bypass_lobby_item_clearing")) {
+            if(player.hasPermission("lobby.bypass_lobby_item_clearing") || player.isOp()) {
                 return;
             }
 

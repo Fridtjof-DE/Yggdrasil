@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetSpawnCMD implements CommandExecutor {
+public class SetSpawnCmd implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 

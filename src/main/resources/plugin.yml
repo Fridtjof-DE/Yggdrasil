@@ -50,14 +50,20 @@ commands:
     description: /easteregg
 
 permissions:
-  yggdrasil.cmd.monitor:
-    description: Grants permission to use the /monitor command!
   yggdrasil.signs.color_codes:
-    description: Grants permission to use color codes on signs!
+    description: Grants permission to use color codes on signs.
   yggdrasil.signs.formatting_codes:
-    description: Grants permission to use formatting codes on signs!
+    description: Grants permission to use formatting codes on signs.
+  yggdrasil.cmd.fly.others:
+     description: Toggles fly-mode for others.
+  yggdrasil.cmd.fly:
+    description: Toggles fly-mode.
   yggdrasil.cmd.head:
+    description: Gets the player's head.
+  yggdrasil.cmd.head.others:
     description: Gets a player's head.
+  yggdrasil.cmd.head.give_others:
+    description: Gives a player a player's head.
   yggdrasil.cmd.setspawn:
     description: Sets the spawn.
   yggdrasil.cmd.spawn:

@@ -9,26 +9,13 @@ import org.bukkit.command.CommandSender;
 import java.util.ArrayList;
 import java.util.List;
 
-public class YggdrasilCMD implements CommandExecutor {
+public class YggdrasilCmd implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
-    public YggdrasilCMD() {
-        TabCompleter tabCompleter = new TabCompleter();
-        tabCompleter.addArgument("info", 1);
-        tabCompleter.addArgument("reload", 1);
-        tabCompleter.addArgument("s", 2);
-        tabCompleter.addArgument(null, 3);
-        plugin.getCommand("yggdrasil").setTabCompleter(tabCompleter);
+    public YggdrasilCmd() {
 
         plugin.getCommand("yggdrasil").setTabCompleter(new YggdrasilTab());
-
-        /*List<String> arguments = new ArrayList<String>();
-        arguments.add("info");
-        arguments.add("reload");
-        TabCompleter tabCompleter = new TabCompleter();
-        plugin.getCommand("yggdrasil").setTabCompleter(new TabCompleter(1, arguments));
-        plugin.getCommand("yggdrasil").setTabCompleter(new TabCompleter(2, true));*/
     }
 
     @Override

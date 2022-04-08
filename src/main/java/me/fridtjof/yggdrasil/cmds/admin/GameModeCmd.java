@@ -13,20 +13,23 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GamemodeCMD implements CommandExecutor {
+public class GameModeCmd implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
+    public GameModeCmd() {
+        plugin.getCommand("gamemode").setTabCompleter(new GameModeTab());
+        plugin.getCommand("gm").setTabCompleter(new GameModeTab());
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-        tabComplete(label);
 
         if (args.length == 1) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
 
-                setGamemodes(player, args, player, false);
+                setGameModes(player, args, player, false);
             } else {
                 sender.sendMessage(MSG.enterPlayer);
             }
@@ -36,7 +39,7 @@ public class GamemodeCMD implements CommandExecutor {
             if (player == null) {
                 sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[1]));
             } else {
-                setGamemodes(sender, args, player, true);
+                setGameModes(sender, args, player, true);
             }
         } else if(args.length == 0) {
             sender.sendMessage(MSG.enterGameMode);
@@ -47,7 +50,7 @@ public class GamemodeCMD implements CommandExecutor {
         return false;
     }
 
-    private void setGamemodes(CommandSender sender, String[] args, Player player, Boolean others) {
+    private void setGameModes(CommandSender sender, String[] args, Player player, Boolean others) {
         String s = "";
 
         if(others == true) {
@@ -81,18 +84,5 @@ public class GamemodeCMD implements CommandExecutor {
         } else {
             sender.sendMessage(MSG.incorrectArgument);
         }
-    }
-
-    private void tabComplete(String label) {
-        /*List<String> arguments = new ArrayList<String>();
-        arguments.add("creative");
-        arguments.add("survival");
-        arguments.add("spectator");
-        arguments.add("adventure");
-        arguments.add("1");
-        arguments.add("0");
-        arguments.add("3");
-        arguments.add("2");
-        plugin.getCommand(label).setTabCompleter(new TabCompleter(1, arguments));*/
     }
 }
