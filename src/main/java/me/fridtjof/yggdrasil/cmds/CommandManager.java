@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.fridtjof.yggdrasil.cmds.cheats.FlyCmd;
 import me.fridtjof.yggdrasil.cmds.cheats.HeadCmd;
 import me.fridtjof.yggdrasil.cmds.cheats.HealCmd;
-import me.fridtjof.yggdrasil.cmds.cheats.SpeedCMD;
+import me.fridtjof.yggdrasil.cmds.cheats.SpeedCmd;
 import me.fridtjof.yggdrasil.cmds.user.MsgCMD;
 import me.fridtjof.yggdrasil.cmds.user.RulesCMD;
 import me.fridtjof.yggdrasil.cmds.user.SpawnCMD;
@@ -43,6 +43,6 @@ public class CommandManager {
         plugin.getCommand("head").setExecutor(new HeadCmd());
         plugin.getCommand("heal").setExecutor(new HealCmd());
         plugin.getCommand("fly").setExecutor(new FlyCmd());
-        plugin.getCommand("speed").setExecutor(new SpeedCMD());
+        plugin.getCommand("speed").setExecutor(new SpeedCmd());
     }
 }
