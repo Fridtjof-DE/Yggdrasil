@@ -1,6 +1,5 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
-import me.fridtjof.puddingapi.bukkit.utils.TabCompleter;
 import me.fridtjof.yggdrasil.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
@@ -10,8 +9,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameModeCmd implements CommandExecutor {
 
