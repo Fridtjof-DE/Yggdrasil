@@ -45,7 +45,7 @@ public class Lobby {
 
     public static void CompassItems(Player player) {
 
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i <= 4; i++) {
 
             if(plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".material") != null &&
                     !plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".name").equals("") &&
