@@ -13,7 +13,7 @@ public class HealCmd implements CommandExecutor {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
-    public Heal() {
+    public HealCmd() {
         plugin.getCommand("heal").setTabCompleter(new HealTab());
     }
 
