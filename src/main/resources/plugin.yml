@@ -1,7 +1,7 @@
 name: Yggdrasil
-version: ${project.version}
+version: ${project.version}-${timestamp}
 main: me.fridtjof.yggdrasil.Yggdrasil
-api-version: 1.18
+api-version: 1.19
 prefix: Yggdrasil
 authors: [Fridtjof_DE]
 description: An essential plugin
@@ -110,6 +110,10 @@ permissions:
     description: Set a your speed.
   yggdrasil.cmd.speed.others:
     description: Set a player's speed.
+  yggdrasil.cmd.fly_speed:
+    description: Set a your fly-speed.
+  yggdrasil.cmd.fly_speed.others:
+    description: Set a player's fly-speed.
   yggdrasil.cmd.rules:
     description: View rules.
   yggdrasil.lobby.bypass_no_pvp:
