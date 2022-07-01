@@ -13,8 +13,11 @@ public class CheckPuddingAPIVersion {
     public CheckPuddingAPIVersion(JavaPlugin plugin) {
         logger = new Logger(plugin);
 
+        //TODO W.I.P.
+
         String version = Bukkit.getPluginManager().getPlugin("PuddingAPI").getDescription().getVersion();
-        version = version.replaceAll("-SNAPSHOT", "");
+        version = version.replaceAll("SNAPSHOT", "");
+        version = version.replaceAll("-", "");
         version = version.replaceAll("\\.", "");
         int versionInt = Integer.parseInt(version);
         if (versionInt < 200) {
