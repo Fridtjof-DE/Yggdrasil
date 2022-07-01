@@ -4,13 +4,10 @@ import me.fridtjof.yggdrasil.cmds.CommandManager;
 import me.fridtjof.yggdrasil.events.EventManager;
 import me.fridtjof.yggdrasil.utils.CheckPuddingAPIVersion;
 import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import me.fridtjof.puddingapi.bukkit.utils.Logger;
 import me.fridtjof.puddingapi.bukkit.utils.Metrics;
 import me.fridtjof.puddingapi.bukkit.utils.UpdateChecker;
-
-import java.util.Optional;
 
 //TODO Blitz wo man hinschaut
 
