@@ -1,6 +1,5 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
-import me.fridtjof.puddingapi.bukkit.utils.TabCompleter;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
