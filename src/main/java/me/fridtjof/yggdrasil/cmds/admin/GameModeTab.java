@@ -1,11 +1,9 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
-import me.fridtjof.puddingapi.bukkit.utils.ArrayUtils;
-import org.bukkit.Bukkit;
+import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,7 @@ public class GameModeTab implements TabCompleter {
         }
         if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.0.others") || sender.isOp()) {
-                ArrayUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(arguments2);
             }
         }
 
@@ -35,7 +33,7 @@ public class GameModeTab implements TabCompleter {
 
         if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.1.others") || sender.isOp()) {
-                ArrayUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(arguments2);
             }
         }
 
@@ -46,7 +44,7 @@ public class GameModeTab implements TabCompleter {
 
         if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.2.others") || sender.isOp()) {
-                ArrayUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(arguments2);
             }
         }
 
@@ -57,7 +55,7 @@ public class GameModeTab implements TabCompleter {
 
         if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.3.others") || sender.isOp()) {
-                ArrayUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(arguments2);
             }
         }
 

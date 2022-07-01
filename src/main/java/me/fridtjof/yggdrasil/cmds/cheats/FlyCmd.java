@@ -1,14 +1,13 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
+import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import me.fridtjof.yggdrasil.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
-import me.fridtjof.yggdrasil.cmds.admin.GameModeTab;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import me.fridtjof.puddingapi.bukkit.player.PlayerAPI;
 
 public class FlyCmd implements CommandExecutor {
 
@@ -25,7 +24,7 @@ public class FlyCmd implements CommandExecutor {
             if(sender instanceof Player) {
                 if (sender.hasPermission("yggdrasil.cmd.fly") || sender.isOp()) {
                     Player player = (Player) sender;
-                    PlayerAPI.toggleFly(player);
+                    PlayerUtils.toggleFly(player);
                     player.sendMessage(MSG.toggledFly);
                 } else {
                     sender.sendMessage(MSG.noPermission);
@@ -37,7 +36,7 @@ public class FlyCmd implements CommandExecutor {
             if(sender.hasPermission("yggdrasil.cmd.fly.others") || sender.isOp()) {
                 Player player = Bukkit.getPlayer(args[0]);
                 if(player != null) {
-                    PlayerAPI.toggleFly(player);
+                    PlayerUtils.toggleFly(player);
                     sender.sendMessage(MSG.youToggledFly.replaceAll("%player%", args[0]));
                 } else {
                     sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));

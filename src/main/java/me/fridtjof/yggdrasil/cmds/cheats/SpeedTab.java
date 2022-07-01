@@ -1,11 +1,9 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
-import me.fridtjof.puddingapi.bukkit.utils.ArrayUtils;
-import org.bukkit.Bukkit;
+import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,7 @@ public class SpeedTab implements TabCompleter {
 
         for(int i = -5; i <= 5; i++) {
             if(sender.hasPermission("yggdrasil.cmd." + s + ".others." + i) || sender.isOp()) {
-                ArrayUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(arguments2);
             }
         }
 

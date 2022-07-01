@@ -64,12 +64,9 @@ public class Templates {
 
                     String name = player.getName() + "'s";
 
-                    if (sender instanceof Player) {
-                        Player senderPlayer = (Player) sender;
-                        if (senderPlayer != null) {
-                            if (senderPlayer.getName().equalsIgnoreCase(player.getName())) {
-                                name = "your";
-                            }
+                    if (sender instanceof Player senderPlayer) {
+                        if (senderPlayer.getName().equalsIgnoreCase(player.getName())) {
+                            name = "your";
                         }
                     }
 
