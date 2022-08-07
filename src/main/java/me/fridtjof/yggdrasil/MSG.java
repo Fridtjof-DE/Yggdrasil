@@ -35,6 +35,13 @@ public class MSG {
     public static String spawnSetTo = plugin.configManager.messagesFile.getConfig().getString("spawn.set_spawn");
     public static String sendToSpawn = plugin.configManager.messagesFile.getConfig().getString("spawn.spawn");
     public static String sendToSpawnOthers = plugin.configManager.messagesFile.getConfig().getString("spawn.spawn_others");
+    public static String chatPrefix = plugin.configManager.messagesFile.getConfig().getString("chat.msg_format");
+
+    public static String tabListHeader = plugin.configManager.messagesFile.getConfig().getString("tablist.header");
+    public static String tabListFooter = plugin.configManager.messagesFile.getConfig().getString("tablist.footer");
+
+    public static String playerJoinMsg = plugin.configManager.messagesFile.getConfig().getString("chat.join_msg");
+    public static String playerQuitMsg = plugin.configManager.messagesFile.getConfig().getString("chat.quit_msg");
 
     public static String startupLogo = "Thank you for using:\n" +
             " __   __                      _                        _   _ \n" +

@@ -109,6 +109,7 @@ public class ConfigManager {
 
         messagesFile.getConfig().addDefault("chat.join_msg", "§a%player% joined the server!");
         messagesFile.getConfig().addDefault("chat.quit_msg", "§a%player% left the server!");
+        messagesFile.getConfig().addDefault("chat.msg_format", "§b%player_displayname%§7: §f");
 
         messagesFile.getConfig().addDefault("info.rules", "§lRegeln:§r\n" +
                 "0. Fridtjof_DE ist der Boss\n" +
