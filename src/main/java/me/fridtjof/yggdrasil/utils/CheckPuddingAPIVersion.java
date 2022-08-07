@@ -11,6 +11,8 @@ public class CheckPuddingAPIVersion {
     private Logger logger;
 
     public CheckPuddingAPIVersion(JavaPlugin plugin) {
+
+    /*
         logger = new Logger(plugin);
 
         //TODO W.I.P.
@@ -27,6 +29,6 @@ public class CheckPuddingAPIVersion {
             //} catch (IllegalStateException exception) {
 
             //}
-        }
+        }*/
     }
 }
