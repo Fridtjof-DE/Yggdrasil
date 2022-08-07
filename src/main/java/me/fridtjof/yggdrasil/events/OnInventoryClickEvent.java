@@ -35,26 +35,28 @@ public class OnInventoryClickEvent implements Listener {
                     if(plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.compass.enable") &&
                             event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.name"))) {
                         player.openInventory(Lobby.CompassInventory);
+                        event.setCancelled(true);
                     }
 
                     if(plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.head.enable") &&
                             event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.head.name"))) {
                         player.openInventory(Lobby.HeadInventory);
+                        event.setCancelled(true);
                     }
 
                     if(plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.egg.enable") &&
                             event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.egg.name"))) {
                         player.openInventory(Lobby.EggInventory);
+                        event.setCancelled(true);
                     }
 
                     for(int i = 0; i < 4; i++) {
                         if(event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".name"))) {
                             BungeeUtils.sendPlayerToServer(player, plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".server"), plugin);
                             player.closeInventory();
+                            event.setCancelled(true);
                         }
                     }
-
-                    event.setCancelled(true);
                 }
             }
         }
