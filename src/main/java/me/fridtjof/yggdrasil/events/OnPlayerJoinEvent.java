@@ -2,6 +2,7 @@ package me.fridtjof.yggdrasil.events;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.puddingapi.bukkit.chat.ChatUtils;
+import me.fridtjof.yggdrasil.MSG;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,7 +18,7 @@ public class OnPlayerJoinEvent implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        ChatUtils.sendTabList(plugin.configManager.messagesFile.getConfig().getString("tablist.header"), plugin.configManager.messagesFile.getConfig().getString("tablist.footer"));
+        ChatUtils.sendTabList(MSG.tabListHeader, MSG.tabListFooter);
 
         if(plugin.configManager.mainConfig.getConfig().getBoolean("spawn.tp_on_join")) {
             SpawnCMD.sendToSpawn(player);

@@ -2,6 +2,7 @@ package me.fridtjof.yggdrasil.events;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.puddingapi.bukkit.chat.ChatUtils;
+import me.fridtjof.yggdrasil.MSG;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +17,7 @@ public class OnPlayerQuitEvent implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        ChatUtils.sendTabList(plugin.configManager.messagesFile.getConfig().getString("tablist.header"), plugin.configManager.messagesFile.getConfig().getString("tablist.footer"));
+        ChatUtils.sendTabList(MSG.tabListHeader, MSG.tabListFooter);
 
         if(plugin.configManager.mainConfig.getConfig().getBoolean("chat.custom_join_quit_msg")) {
             event.setQuitMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), plugin.configManager.messagesFile.getConfig().getString("chat.quit_msg")));
