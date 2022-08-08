@@ -6,12 +6,12 @@
 
     <groupId>me.fridtjof</groupId>
     <artifactId>Yggdrasil</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Yggdrasil</name>
 
-    <description>An essential plugin</description>
+    <description>A lightweight EssentialsX like Spigot plugin</description>
     <properties>
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yy-MMdd-HHmm</maven.build.timestamp.format>
@@ -19,6 +19,7 @@
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <url>https://www.fridtjof.me/</url>
 
     <build>

@@ -24,7 +24,6 @@ public class CommandManager {
         plugin.getCommand("yggdrasil").setExecutor(new YggdrasilCmd());
         plugin.getCommand("gm").setExecutor(new GameModeCmd());
         plugin.getCommand("gamemode").setExecutor(new GameModeCmd());
-        plugin.getCommand("easteregg").setExecutor(new EasterEggCMD());
 
         //MOD
         plugin.getCommand("day").setExecutor(new TimeCMD());

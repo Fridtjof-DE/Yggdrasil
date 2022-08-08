@@ -15,12 +15,6 @@ public class EventManager implements Listener {
         getServer().getPluginManager().registerEvents(new OnPlayerMoveEvent(), plugin);
         getServer().getPluginManager().registerEvents(new OnPlayerQuitEvent(), plugin);
         getServer().getPluginManager().registerEvents(new OnPlayerRespawnEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnEntityDamageEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnEntityDamageByEntityEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnFoodLevelChangeEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnPlayerDropItemEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnPlayerInteractEvent(), plugin);
-        getServer().getPluginManager().registerEvents(new OnInventoryClickEvent(), plugin);
         getServer().getPluginManager().registerEvents(new OnAsyncPlayerChatEvent(), plugin);
     }
 }

@@ -4,14 +4,11 @@ main: me.fridtjof.yggdrasil.Yggdrasil
 api-version: 1.19
 prefix: Yggdrasil
 authors: [Fridtjof_DE]
-description: An essential plugin
+description: A lightweight EssentialsX like Spigot plugin
 website: https://www.fridtjof.me/
 depend: [PuddingAPI, PlaceholderAPI]
-softdepend: [Plan]
 
 commands:
-  monitor:
-    description: Monitors server stats.
   head:
     description: Gets a player's head.
   msg:
@@ -46,12 +43,8 @@ commands:
     description: Set speed.
   rules:
     description: View rules.
-  easteregg:
-    description: /easteregg
 
 permissions:
-  yggdrasil.signs.color_codes:
-    description: Grants permission to use color codes on signs.
   yggdrasil.signs.formatting_codes:
     description: Grants permission to use formatting codes on signs.
   yggdrasil.cmd.fly.others:
@@ -116,13 +109,3 @@ permissions:
     description: Set a player's fly-speed.
   yggdrasil.cmd.rules:
     description: View rules.
-  yggdrasil.lobby.bypass_no_pvp:
-    description: Bypass no PvP in lobby.
-  yggdrasil.lobby.bypass_no_pve:
-    description: Bypass no PvE in lobby.
-  yggdrasil.lobby.bypass_no_item_dropping:
-    description: Bypass no item dropping in lobby.
-  yggdrasil.lobby.bypass_lobby_item_clearing:
-    description: Bypass item clearing in lobby.
-  yggdrasil.cmd.easteregg:
-    description: Use /easteregg.
