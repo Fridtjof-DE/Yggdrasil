@@ -16,7 +16,7 @@ public class OnPlayerInteractEvent implements Listener {
 
         Player player = event.getPlayer();
 
-        Lobby.HotbarItems(player);
+        Lobby.HotBarItems(player);
         Lobby.CompassItems(player);
         Lobby.HeadItems(player);
         Lobby.EggItems(player);

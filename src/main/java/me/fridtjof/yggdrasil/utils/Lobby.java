@@ -2,6 +2,7 @@ package me.fridtjof.yggdrasil.utils;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.puddingapi.bukkit.items.PlayerHead;
+import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -24,21 +25,25 @@ public class Lobby {
     public static Inventory EggInventory = Bukkit.createInventory(
             null, InventoryType.CHEST, plugin.configManager.lobbyConfig.getConfig().getString("lobby.egg.name"));
 
-    public static void HotbarItems(Player player) {
+    public static void HotBarItems(Player player) {
+
         if(plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.compass.enable")) {
+
             if(player.hasPermission("lobby.bypass_lobby_item_clearing") || player.isOp()) {
-                return;
+                if(!PlayerUtils.hasEmptyInventory(player)) {
+                    return;
+                }
             }
 
             player.getInventory().clear();
 
-            Lobby.HotbarItemsHelper(new ItemStack(Material.COMPASS), plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.name"),
+            Lobby.HotBarItemsHelper(new ItemStack(Material.COMPASS), plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.name"),
                     plugin.configManager.lobbyConfig.getConfig().getInt("lobby.compass.slot"), player);
 
-            Lobby.HotbarItemsHelper(new ItemStack(Material.DRAGON_EGG), plugin.configManager.lobbyConfig.getConfig().getString("lobby.egg.name"),
+            Lobby.HotBarItemsHelper(new ItemStack(Material.DRAGON_EGG), plugin.configManager.lobbyConfig.getConfig().getString("lobby.egg.name"),
                     plugin.configManager.lobbyConfig.getConfig().getInt("lobby.egg.slot"), player);
 
-            Lobby.HotbarItemsHelper(PlayerHead.getSkullFromOwner(player.getName()), plugin.configManager.lobbyConfig.getConfig().getString("lobby.head.name"),
+            Lobby.HotBarItemsHelper(PlayerHead.getSkullFromOwner(player.getName()), plugin.configManager.lobbyConfig.getConfig().getString("lobby.head.name"),
                     plugin.configManager.lobbyConfig.getConfig().getInt("lobby.head.slot"), player);
         }
     }
@@ -92,7 +97,7 @@ public class Lobby {
 
     }
 
-    public static void HotbarItemsHelper(ItemStack item, String displayName, int hotbarSlot, Player player) {
+    public static void HotBarItemsHelper(ItemStack item, String displayName, int hotbarSlot, Player player) {
         ItemStack itemStack = new ItemStack(item);
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(displayName);

@@ -24,7 +24,7 @@ public class OnInventoryClickEvent implements Listener {
         if(event.getWhoClicked() instanceof Player) {
             Player player = (Player) event.getWhoClicked();
 
-            Lobby.HotbarItems(player);
+            Lobby.HotBarItems(player);
             Lobby.CompassItems(player);
             Lobby.HeadItems(player);
             Lobby.EggItems(player);
@@ -50,11 +50,14 @@ public class OnInventoryClickEvent implements Listener {
                         event.setCancelled(true);
                     }
 
-                    for(int i = 0; i < 4; i++) {
-                        if(event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".name"))) {
-                            BungeeUtils.sendPlayerToServer(player, plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".server"), plugin);
-                            player.closeInventory();
-                            event.setCancelled(true);
+                    if(event.getClickedInventory().equals(Lobby.CompassInventory)) {
+                        for(int i = 0; i < 4; i++) {
+                            if (plugin.configManager.lobbyConfig.getConfig().getBoolean("lobby.compass.enable") &&
+                                    event.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".name"))) {
+                                BungeeUtils.sendPlayerToServer(player, plugin.configManager.lobbyConfig.getConfig().getString("lobby.compass.slot_" + i + ".server"), plugin);
+                                player.closeInventory();
+                                event.setCancelled(true);
+                            }
                         }
                     }
                 }
