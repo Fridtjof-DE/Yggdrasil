@@ -3,10 +3,10 @@
 [![Dev State Badge](https://img.shields.io/badge/stage%20of%20development-early%20beta-yellow?style=flat-square)]()
 [![Maintenance Badge](https://img.shields.io/maintenance/yes/2022?style=flat-square)]()
 [![Issue Badge](https://img.shields.io/github/issues/Fridtjof-DE/Yggdrasil?style=flat-square)](https://github.com/Fridtjof-DE/Yggdrasil/issues)
-[![Discord Online Badge](https://img.shields.io/discord/698210072899223642?style=flat-square)](https://discord.gg/fT6VJurHCT)
+[![Discord Online Badge](https://img.shields.io/discord/961799414647750717?style=flat-square)](https://discord.gg/fT6VJurHCT)
 [![bStats Players](https://img.shields.io/bstats/players/7954?style=flat-square)](https://bstats.org/plugin/bukkit/Yggdrasil/7954)
 [![bStats Server](https://img.shields.io/bstats/servers/7954?style=flat-square)](https://bstats.org/plugin/bukkit/Yggdrasil/7954)
 
 # <img src="https://github.com/Fridtjof-DE/Yggdrasil/blob/master/yggdrasil.png" data-canonical-src="https://github.com/Fridtjof-DE/Yggdrasil/blob/master/yggdrasil.png" width="32" height="32" /> Yggdrasil
 
-A lightweight EssentialsX like Spigot plugin in development
+A lightweight Essentials like Spigot plugin in development
