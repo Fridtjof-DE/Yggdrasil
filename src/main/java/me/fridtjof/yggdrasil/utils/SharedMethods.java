@@ -1,7 +1,6 @@
 package me.fridtjof.yggdrasil.utils;
 
 import me.fridtjof.puddingapi.general.utils.RegexUtils;
-import me.fridtjof.yggdrasil.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -9,33 +8,33 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.regex.Pattern;
-
-public class Templates {
+public class SharedMethods {
 
     static Yggdrasil plugin = Yggdrasil.getInstance();
 
     public static void timeCommand(CommandSender sender, Command command, String[] args, int ticks) {
         if(args.length == 0) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+            if (sender instanceof Player player) {
                 if (player.hasPermission("yggdrasil.cmd."+ command.getName())) {
                     setTimeInWorld(player, player.getWorld().getName(), ticks);
                 }
-            } else {
+            }
+            else {
                 sender.sendMessage(MSG.enterWorld);
             }
-        } else if(args.length == 1) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+        }
+        else if(args.length == 1) {
+            if (sender instanceof Player player) {
                 if (player.hasPermission("yggdrasil.cmd."+ command.getName())) {
 
                     setTimeInWorld(player, args[0], ticks);
                 }
-            } else {
+            }
+            else {
                 setTimeInWorld(sender, args[0], ticks);
             }
-        } else {
+        }
+        else {
             sender.sendMessage(MSG.tooManyArguments);
         }
     }
@@ -44,17 +43,18 @@ public class Templates {
         World world = Bukkit.getWorld(worldName);
         if(world == null) {
             sender.sendMessage(MSG.worldNotFound.replaceAll("%world%", worldName));
-        } else {
-            long time = ticks;
-            world.setTime(time);
-            sender.sendMessage(MSG.timeSet.replaceAll("%time%", Long.toString(time)).replaceAll("%world%", worldName));
+        }
+        else {
+            world.setTime(ticks);
+            sender.sendMessage(MSG.timeSet.replaceAll("%time%", Long.toString(ticks)).replaceAll("%world%", worldName));
         }
     }
 
     public static void setSpeed(CommandSender sender, String[] args, Player player) {
         if (player == null) {
             sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
-        } else {
+        }
+        else {
 
             if(RegexUtils.isNumeric(args[0])) {
 
@@ -73,15 +73,18 @@ public class Templates {
                     if (player.isFlying()) {
                         player.setFlySpeed(speed);
                         sender.sendMessage(MSG.setFlySpeed.replaceAll("%speed%", args[0]).replaceAll("%player%", name));
-                    } else {
+                    }
+                    else {
                         player.setWalkSpeed(speed);
                         sender.sendMessage(MSG.setWalkSpeed.replaceAll("%speed%", args[0]).replaceAll("%player%", name));
                     }
 
-                } else {
+                }
+                else {
                     player.sendMessage(MSG.incorrectArgument);
                 }
-            } else {
+            }
+            else {
                 player.sendMessage(MSG.incorrectArgument);
             }
         }

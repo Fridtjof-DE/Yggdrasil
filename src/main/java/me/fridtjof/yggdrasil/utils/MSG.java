@@ -1,4 +1,6 @@
-package me.fridtjof.yggdrasil;
+package me.fridtjof.yggdrasil.utils;
+
+import me.fridtjof.yggdrasil.Yggdrasil;
 
 public class MSG {
 

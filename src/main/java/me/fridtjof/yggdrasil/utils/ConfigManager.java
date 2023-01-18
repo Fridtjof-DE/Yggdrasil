@@ -1,4 +1,4 @@
-package me.fridtjof.yggdrasil;
+package me.fridtjof.yggdrasil.utils;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import me.fridtjof.puddingapi.bukkit.utils.Logger;
