@@ -1,5 +1,5 @@
 name: Yggdrasil
-version: ${project.version}-${timestamp}
+version: ${project.version}
 main: me.fridtjof.yggdrasil.Yggdrasil
 api-version: 1.19
 prefix: Yggdrasil

@@ -6,7 +6,7 @@
 
     <groupId>me.fridtjof</groupId>
     <artifactId>Yggdrasil</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>Yggdrasil</name>
@@ -23,7 +23,7 @@
     <url>https://www.fridtjof.me/</url>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}-${timestamp}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -86,7 +86,7 @@
             <artifactId>puddingapi</artifactId>
             <version>2.0.0-Snapshot</version>
             <scope>system</scope>
-            <systemPath>/home/fridtjof/Dokumente/GitHub/PuddingAPI/builds/PuddingAPI-2.0.0-SNAPSHOT-22-0808-1000.jar</systemPath>
+            <systemPath>C:/Users/Fridtjof/Documents/GitHub/PuddingAPI/builds/PuddingAPI-2301181927.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>
