@@ -2,7 +2,7 @@ package me.fridtjof.yggdrasil.events;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.puddingapi.bukkit.chat.ChatUtils;
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

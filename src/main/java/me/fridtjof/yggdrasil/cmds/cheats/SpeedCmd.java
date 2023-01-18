@@ -1,9 +1,8 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
-import me.fridtjof.yggdrasil.cmds.admin.GameModeTab;
-import me.fridtjof.yggdrasil.utils.Templates;
+import me.fridtjof.yggdrasil.utils.SharedMethods;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,7 +34,7 @@ public class SpeedCmd implements CommandExecutor {
                 }
 
                 if(sender.hasPermission("yggdrasil.cmd." + s + "." + args[0]) || player.isOp()) {
-                    Templates.setSpeed(sender, args, player);
+                    SharedMethods.setSpeed(sender, args, player);
                 }
 
             } else {
@@ -53,7 +52,7 @@ public class SpeedCmd implements CommandExecutor {
                 }
 
                 if (sender.hasPermission("yggdrasil.cmd." + s + ".others." + args[0]) || player.isOp()) {
-                    Templates.setSpeed(sender, args, player);
+                    SharedMethods.setSpeed(sender, args, player);
                 }
             } else {
                 sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));

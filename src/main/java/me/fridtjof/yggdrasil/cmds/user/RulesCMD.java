@@ -1,6 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.user;
 
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

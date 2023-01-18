@@ -1,7 +1,7 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
 import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

@@ -3,7 +3,7 @@ package me.fridtjof.yggdrasil.cmds.mod;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import me.fridtjof.yggdrasil.utils.Templates;
+import me.fridtjof.yggdrasil.utils.SharedMethods;
 
 public class TimeCMD implements CommandExecutor {
 
@@ -24,7 +24,7 @@ public class TimeCMD implements CommandExecutor {
         }
 
         if(ticks != -1) {
-            Templates.timeCommand(sender, command, args, ticks);
+            SharedMethods.timeCommand(sender, command, args, ticks);
         }
 
         return false;

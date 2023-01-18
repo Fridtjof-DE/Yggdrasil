@@ -1,6 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.user;
 
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,7 +33,7 @@ public class MsgCMD implements CommandExecutor {
                     sender.sendMessage("[" + "Me" + "] " + ">>> " + "[" + target.getName() + "]§r:" + msg);
                     target.sendMessage("[" + sender.getName() + "] " + ">>> " + "[" + "Me" + "]§r:" + msg);
 
-                } else if (!(target != null)) {
+                } else {
                     sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
                 }
             }

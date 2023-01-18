@@ -1,6 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
-import me.fridtjof.yggdrasil.MSG;
+import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
