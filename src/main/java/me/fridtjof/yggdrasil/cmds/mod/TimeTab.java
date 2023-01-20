@@ -17,16 +17,13 @@ public class TimeTab implements TabCompleter {
         List<String> result = new ArrayList<>();
 
         if (sender.hasPermission("yggdrasil.cmd." + command.getName() + ".other_worlds")) {
-
             for(World worlds : Bukkit.getWorlds()) {
                 arguments.add(worlds.getName());
             }
         }
 
         if (args.length == 1) {
-
             for (String a : arguments) {
-
                 if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
                     result.add(a);
                 }

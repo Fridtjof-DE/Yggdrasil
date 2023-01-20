@@ -30,14 +30,10 @@ public class TimeCmd implements CommandExecutor {
         int ticks = -1;
 
         switch(cmdName) {
-            case "day":
-                ticks = 1000;
-            case "midnight":
-                ticks = 18000;
-            case "night":
-                ticks = 13000;
-            case "noon":
-                ticks = 6000;
+            case "day" -> ticks = 1000;
+            case "midnight" -> ticks = 18000;
+            case "night" -> ticks = 13000;
+            case "noon" -> ticks = 6000;
         }
 
         timeCommand(sender, command, args, ticks);
@@ -47,33 +43,30 @@ public class TimeCmd implements CommandExecutor {
 
     private void timeCommand(CommandSender sender, Command command, String[] args, int ticks) {
 
-        if(args.length == 0) {
-
-            if (sender instanceof Player player) {
-
-                if (player.hasPermission("yggdrasil.cmd."+ command.getName())) {
-                    setTimeInWorld(player, player.getWorld().getName(), ticks);
+        switch(args.length) {
+            case 0 -> {
+                if (sender instanceof Player player) {
+                    if (player.hasPermission("yggdrasil.cmd."+ command.getName())) {
+                        setTimeInWorld(player, player.getWorld().getName(), ticks);
+                    }
+                    player.sendMessage(MSG.noPermission);
+                    return;
                 }
-                return;
+                sender.sendMessage(MSG.enterWorld);
             }
-            sender.sendMessage(MSG.enterWorld);
-            return;
-        }
-
-        if(args.length == 1) {
-
-            if (sender instanceof Player player) {
-
-                if (player.hasPermission("yggdrasil.cmd."+ command.getName())) {
-
-                    setTimeInWorld(player, args[0], ticks);
+            case 1 -> {
+                if (sender instanceof Player player) {
+                    if (!player.hasPermission("yggdrasil.cmd."+ command.getName())) {
+                        player.sendMessage(MSG.noPermission);
+                        return;
+                    }
                 }
-                return;
+                setTimeInWorld(sender, args[0], ticks);
             }
-            setTimeInWorld(sender, args[0], ticks);
-            return;
+            default -> {
+                sender.sendMessage(MSG.tooManyArguments);
+            }
         }
-        sender.sendMessage(MSG.tooManyArguments);
     }
 
     private void setTimeInWorld(CommandSender sender, String worldName, int ticks) {

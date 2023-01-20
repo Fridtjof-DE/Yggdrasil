@@ -21,64 +21,69 @@ public class GameModeCmd implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (args.length == 1) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
+        switch(args.length) {
+            case 0 -> {
+                sender.sendMessage(MSG.enterGameMode);
+            }
+            case 1 -> {
+                if (sender instanceof Player player) {
 
-                setGameModes(player, args, player, false);
-            } else {
+                    setGameModes(player, args, player, false);
+                    return false;
+                }
                 sender.sendMessage(MSG.enterPlayer);
             }
-        } else if (args.length == 2) {
-            Player player = Bukkit.getPlayer(args[1]);
+            case 2 -> {
+                Player player = Bukkit.getPlayer(args[1]);
 
-            if (player == null) {
-                sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[1]));
-            } else {
+                if (player == null) {
+                    sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[1]));
+                    return false;
+                }
                 setGameModes(sender, args, player, true);
             }
-        } else if(args.length == 0) {
-            sender.sendMessage(MSG.enterGameMode);
-        } else {
-            sender.sendMessage(MSG.tooManyArguments);
+            default -> sender.sendMessage(MSG.tooManyArguments);
         }
-
         return false;
     }
 
     private void setGameModes(CommandSender sender, String[] args, Player player, Boolean others) {
-        String s = "";
 
-        if(others == true) {
+        String s = "";
+        if(others) {
             s = ".others";
         }
 
-        if (args[0].equals("0") || args[0].equals("survival")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.0" + s)) {
-                player.setGameMode(GameMode.SURVIVAL);
-            } else {
+        switch(args[0]) {
+            case "0", "survival" -> {
+                if (sender.hasPermission("yggdrasil.cmd.gm.0" + s)) {
+                    player.setGameMode(GameMode.SURVIVAL);
+                    return;
+                }
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("1") || args[0].equals("creative")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.1" + s)) {
-                player.setGameMode(GameMode.CREATIVE);
-            } else {
+            case "1", "creative" -> {
+                if (sender.hasPermission("yggdrasil.cmd.gm.1" + s)) {
+                    player.setGameMode(GameMode.CREATIVE);
+                    return;
+                }
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("2") || args[0].equals("adventure")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.2" + s)) {
-                player.setGameMode(GameMode.ADVENTURE);
-            } else {
+            case "2", "adventure" -> {
+                if (sender.hasPermission("yggdrasil.cmd.gm.2" + s)) {
+                    player.setGameMode(GameMode.ADVENTURE);
+                    return;
+                }
                 sender.sendMessage(MSG.noPermission);
             }
-        } else if (args[0].equals("3") || args[0].equals("spectator")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.3" + s)) {
-                player.setGameMode(GameMode.SPECTATOR);
-            } else {
+            case "3", "spectator" -> {
+                if (sender.hasPermission("yggdrasil.cmd.gm.3" + s)) {
+                    player.setGameMode(GameMode.SPECTATOR);
+                    return;
+                }
                 sender.sendMessage(MSG.noPermission);
             }
-        } else {
-            sender.sendMessage(MSG.incorrectArgument);
+            default -> sender.sendMessage(MSG.incorrectArgument);
         }
     }
 }
