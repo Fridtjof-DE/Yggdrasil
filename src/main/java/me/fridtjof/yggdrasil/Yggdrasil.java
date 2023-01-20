@@ -7,11 +7,13 @@ import me.fridtjof.yggdrasil.utils.ConfigManager;
 import me.fridtjof.yggdrasil.utils.MSG;
 import org.bukkit.plugin.java.JavaPlugin;
 
-//TODO Blitz wo man hinschaut
-
 public final class Yggdrasil extends JavaPlugin {
 
-    //TODO etc /fly /speed
+    //TODO etc /fly /speed //msg
+    //TODO Blitz wo man hinschaut
+    //TODO TP in andere world
+    //TODO others Rechte verbessern
+    //TDOO sun
 
     private static Yggdrasil instance;
 
@@ -32,10 +34,11 @@ public final class Yggdrasil extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        new PuddingAPIVersionChecker(this, logger, 123);
+        new PuddingAPIVersionChecker(this, logger, 9999L);
         configManager = new ConfigManager(this);
         new EventManager(this);
         new CommandManager(this);
+        //TODO setup SpigotMC page for ID
         new UpdateChecker(this, 81151, "yggdrasil.update");
         new Metrics(this, 7954);
 

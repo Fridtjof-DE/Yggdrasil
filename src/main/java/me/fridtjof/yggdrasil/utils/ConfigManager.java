@@ -68,13 +68,10 @@ public class ConfigManager {
         messagesFile.getConfig().addDefault("chat.quit_msg", "§a%player% left the server!");
         messagesFile.getConfig().addDefault("chat.msg_format", "§b%player_displayname%§7: §f");
 
-        messagesFile.getConfig().addDefault("info.rules", "§lRegeln:§r\n" +
-                "0. Fridtjof_DE ist der Boss\n" +
-                "1. Fischies ist vogelfrei\n" +
-                "2. Keiner hat mehr Tode als Fornox\n" +
-                "3. Kein Griefing\n" +
-                "4. Kein Klauen\n" +
-                "5. Keine Kämpfe ohne Absprache");
+        messagesFile.getConfig().addDefault("info.rules", "§lRules:§r\n" +
+                "0. Rule\n" +
+                "1. Ruleeeeee\n" +
+                "2. Rulesssss\n");
 
         messagesFile.getConfig().addDefault("error.no_permission", "§cYou don't have the permission to do that!");
         messagesFile.getConfig().addDefault("error.too_many_args", "§cToo many arguments!");
@@ -98,7 +95,7 @@ public class ConfigManager {
 
         messagesFile.getConfig().addDefault("set.fly_speed", "§bYou've set %player% fly-speed for to %speed%!");
         messagesFile.getConfig().addDefault("set.walk_speed", "§bYou've set %player% walk-speed for to %speed%!");
-        messagesFile.getConfig().addDefault("set.time", "§bTime was set to %time% ticks in %world%");
+        messagesFile.getConfig().addDefault("set.time", "§bTime was set to %time% ticks in world §f%world%!§b");
 
         messagesFile.getConfig().addDefault("toggle.fly-mode", "§bYou've toggled fly-mode!");
         messagesFile.getConfig().addDefault("toggle.fly-mode_others", "§bYou've toggled fly-mode for %player%!");

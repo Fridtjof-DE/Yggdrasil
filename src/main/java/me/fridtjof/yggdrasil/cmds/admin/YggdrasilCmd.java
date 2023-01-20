@@ -10,7 +10,7 @@ import java.util.List;
 
 public class YggdrasilCmd implements CommandExecutor {
 
-    static Yggdrasil plugin = Yggdrasil.getInstance();
+    Yggdrasil plugin = Yggdrasil.getInstance();
 
     public YggdrasilCmd() {
 
