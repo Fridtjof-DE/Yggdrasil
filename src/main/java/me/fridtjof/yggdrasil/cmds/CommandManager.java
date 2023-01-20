@@ -1,7 +1,7 @@
 package me.fridtjof.yggdrasil.cmds;
 
 import me.fridtjof.yggdrasil.cmds.admin.*;
-import me.fridtjof.yggdrasil.cmds.mod.TimeCMD;
+import me.fridtjof.yggdrasil.cmds.mod.TimeCmd;
 import org.bukkit.plugin.java.JavaPlugin;
 import me.fridtjof.yggdrasil.cmds.cheats.FlyCmd;
 import me.fridtjof.yggdrasil.cmds.cheats.HeadCmd;
@@ -26,10 +26,10 @@ public class CommandManager {
         plugin.getCommand("gamemode").setExecutor(new GameModeCmd());
 
         //MOD
-        plugin.getCommand("day").setExecutor(new TimeCMD());
-        plugin.getCommand("night").setExecutor(new TimeCMD());
-        plugin.getCommand("noon").setExecutor(new TimeCMD());
-        plugin.getCommand("midnight").setExecutor(new TimeCMD());
+        plugin.getCommand("day").setExecutor(new TimeCmd());
+        plugin.getCommand("night").setExecutor(new TimeCmd());
+        plugin.getCommand("noon").setExecutor(new TimeCmd());
+        plugin.getCommand("midnight").setExecutor(new TimeCmd());
 
         //PLAYER
         plugin.getCommand("msg").setExecutor(new MsgCMD());
