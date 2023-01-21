@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
 import org.bukkit.Bukkit;
@@ -27,27 +28,29 @@ public class GameModeCmd implements CommandExecutor {
             }
             case 1 -> {
                 if (sender instanceof Player player) {
-
                     setGameModes(player, args, player, false);
+                    player.sendMessage(MSG.setGamemode.replaceAll("%ygg_gamemode%", args[0]));
                     return false;
                 }
                 sender.sendMessage(MSG.enterPlayer);
             }
             case 2 -> {
-                Player player = Bukkit.getPlayer(args[1]);
+                Player targetPlayer = Bukkit.getPlayer(args[1]);
 
-                if (player == null) {
+                if (targetPlayer == null) {
                     sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[1]));
                     return false;
                 }
-                setGameModes(sender, args, player, true);
+                setGameModes(sender, args, targetPlayer, true);
+                sender.sendMessage(PlaceholderAPI.setPlaceholders(targetPlayer, MSG.setGamemodeOthers).replaceAll("%ygg_gamemode%", args[0]));
+                targetPlayer.sendMessage(MSG.setGamemode.replaceAll("%ygg_gamemode%", args[0]));
             }
             default -> sender.sendMessage(MSG.tooManyArguments);
         }
         return false;
     }
 
-    private void setGameModes(CommandSender sender, String[] args, Player player, Boolean others) {
+    private void setGameModes(CommandSender sender, String[] args, Player targetPlayer, Boolean others) {
 
         String s = "";
         if(others) {
@@ -57,33 +60,34 @@ public class GameModeCmd implements CommandExecutor {
         switch(args[0]) {
             case "0", "survival" -> {
                 if (sender.hasPermission("yggdrasil.cmd.gm.0" + s)) {
-                    player.setGameMode(GameMode.SURVIVAL);
+                    targetPlayer.setGameMode(GameMode.SURVIVAL);
                     return;
                 }
-                sender.sendMessage(MSG.noPermission);
             }
             case "1", "creative" -> {
                 if (sender.hasPermission("yggdrasil.cmd.gm.1" + s)) {
-                    player.setGameMode(GameMode.CREATIVE);
+                    targetPlayer.setGameMode(GameMode.CREATIVE);
                     return;
                 }
-                sender.sendMessage(MSG.noPermission);
             }
             case "2", "adventure" -> {
                 if (sender.hasPermission("yggdrasil.cmd.gm.2" + s)) {
-                    player.setGameMode(GameMode.ADVENTURE);
+                    targetPlayer.setGameMode(GameMode.ADVENTURE);
                     return;
                 }
-                sender.sendMessage(MSG.noPermission);
             }
             case "3", "spectator" -> {
                 if (sender.hasPermission("yggdrasil.cmd.gm.3" + s)) {
-                    player.setGameMode(GameMode.SPECTATOR);
+                    targetPlayer.setGameMode(GameMode.SPECTATOR);
                     return;
                 }
-                sender.sendMessage(MSG.noPermission);
             }
-            default -> sender.sendMessage(MSG.incorrectArgument);
+            default -> {
+                sender.sendMessage(MSG.incorrectArgument);
+                return;
+            }
         }
+
+        sender.sendMessage(MSG.noPermission);
     }
 }

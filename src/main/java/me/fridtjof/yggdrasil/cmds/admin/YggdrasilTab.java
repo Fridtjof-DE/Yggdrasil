@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
+import me.fridtjof.puddingapi.bukkit.cmds.ArgumentParser;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -11,29 +12,16 @@ public class YggdrasilTab implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 
-        List<String> arguments = new ArrayList<String>();
-        List<String> result = new ArrayList<>();
+        List<String> argList = new ArrayList<String>();
 
         if(sender.hasPermission("yggdrasil.reload") || sender.isOp()) {
-            arguments.add("reload");
+            argList.add("reload");
         }
         if(sender.hasPermission("yggdrasil.info") || sender.isOp()) {
-            arguments.add("info");
+            argList.add("info");
         }
 
-
-        if (args.length == 1) {
-            for (String a : arguments) {
-                if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                    result.add(a);
-                }
-            }
-            return result;
-        } else if (args.length >= 2) {
-            return result;
-        }
-
-        return null;
+        return ArgumentParser.parseArgs(args, argList);
     }
 }
 

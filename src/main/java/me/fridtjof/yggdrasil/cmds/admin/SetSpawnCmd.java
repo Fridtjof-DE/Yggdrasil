@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 public class SetSpawnCmd implements CommandExecutor {
 
-    static Yggdrasil plugin = Yggdrasil.getInstance();
+    Yggdrasil plugin = Yggdrasil.getInstance();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -31,10 +31,10 @@ public class SetSpawnCmd implements CommandExecutor {
                 plugin.configManager.dataFile.getConfig().options().copyDefaults(true);
                 plugin.configManager.dataFile.save();
             }
-        } else {
-            sender.sendMessage(MSG.playerOnly);
+            return false;
         }
 
+        sender.sendMessage(MSG.playerOnly);
         return false;
     }
 }

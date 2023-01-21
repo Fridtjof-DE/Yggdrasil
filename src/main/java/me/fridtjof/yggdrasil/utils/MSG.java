@@ -8,6 +8,7 @@ public class MSG {
 
     public static String noPermission = plugin.configManager.messagesFile.getConfig().getString("error.no_permission");
     public static String tooManyArguments = plugin.configManager.messagesFile.getConfig().getString("error.too_many_args");
+    public static String notEnoughArgs = plugin.configManager.messagesFile.getConfig().getString("error.not_enough_args");
     public static String incorrectArgument = plugin.configManager.messagesFile.getConfig().getString("error.incorrect_args");
     public static String playerOnly = plugin.configManager.messagesFile.getConfig().getString("error.player_only");
 
@@ -28,7 +29,7 @@ public class MSG {
     public static String youHealed = plugin.configManager.messagesFile.getConfig().getString("heal.heal_others");
 
     public static String toggledFly = plugin.configManager.messagesFile.getConfig().getString("toggle.fly-mode");
-    public static String youToggledFly = plugin.configManager.messagesFile.getConfig().getString("toggle.fly-mode_others");
+    public static String toggledFlyOthers = plugin.configManager.messagesFile.getConfig().getString("toggle.fly-mode_others");
 
     public static String setFlySpeed = plugin.configManager.messagesFile.getConfig().getString("set.fly_speed");
     public static String setWalkSpeed = plugin.configManager.messagesFile.getConfig().getString("set.walk_speed");
@@ -44,6 +45,9 @@ public class MSG {
 
     public static String playerJoinMsg = plugin.configManager.messagesFile.getConfig().getString("chat.join_msg");
     public static String playerQuitMsg = plugin.configManager.messagesFile.getConfig().getString("chat.quit_msg");
+
+    public static String setGamemode = plugin.configManager.messagesFile.getConfig().getString("set.gamemode");
+    public static String setGamemodeOthers = plugin.configManager.messagesFile.getConfig().getString("set.gamemode_others");
 
     public static String startupLogo = "Thank you for using:\n" +
             " __   __                      _                        _   _ \n" +

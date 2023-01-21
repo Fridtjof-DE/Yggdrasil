@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.admin;
 
+import me.fridtjof.puddingapi.bukkit.cmds.ArgumentParser;
 import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -12,65 +13,47 @@ public class GameModeTab implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 
-        List<String> arguments1 = new ArrayList<String>();
-        List<String> arguments2 = new ArrayList<String>();
-        List<String> result = new ArrayList<>();
+        List<String> argList1 = new ArrayList<String>();
+        List<String> argList2 = new ArrayList<String>();
 
         if(sender.hasPermission("yggdrasil.cmd.gm.0") || sender.isOp()) {
-            arguments1.add("0");
-            arguments1.add("survival");
+            argList1.add("0");
+            argList1.add("survival");
         }
         if(sender.hasPermission("yggdrasil.cmd.gm.1") || sender.isOp()) {
-            arguments1.add("1");
-            arguments1.add("creative");
+            argList1.add("1");
+            argList1.add("creative");
         }
         if(sender.hasPermission("yggdrasil.cmd.gm.2") || sender.isOp()) {
-            arguments1.add("2");
-            arguments1.add("adventure");
+            argList1.add("2");
+            argList1.add("adventure");
         }
         if(sender.hasPermission("yggdrasil.cmd.gm.3") || sender.isOp()) {
-            arguments1.add("3");
-            arguments1.add("spectator");
+            argList1.add("3");
+            argList1.add("spectator");
         }
 
         if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.0.others") || sender.isOp()) {
-                PlayerUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.1.others") || sender.isOp()) {
-                PlayerUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.2.others") || sender.isOp()) {
-                PlayerUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
             if(sender.hasPermission("yggdrasil.cmd.gm.3.others") || sender.isOp()) {
-                PlayerUtils.addAllPlayers(arguments2);
+                PlayerUtils.addAllPlayers(argList2);
             }
         }
 
-        switch(args.length) {
-            case 1 -> {
-                for (String a : arguments1) {
-                    if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                        result.add(a);
-                    }
-                }
-            }
-            case 2 -> {
-                for (String a : arguments2) {
-                    if (a.toLowerCase().startsWith(args[1].toLowerCase())) {
-                        result.add(a);
-                    }
-                }
-            }
-        }
-
-        return result;
+        return ArgumentParser.parseArgs(args ,argList1, argList2);
     }
 }

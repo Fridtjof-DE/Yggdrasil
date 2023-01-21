@@ -35,6 +35,8 @@ public final class Yggdrasil extends JavaPlugin {
     public void onEnable() {
 
         new PuddingAPIVersionChecker(this, logger, 9999L);
+        dependencyChecker.checkForDependency("PlaceholderAPI", true);
+
         configManager = new ConfigManager(this);
         new EventManager(this);
         new CommandManager(this);

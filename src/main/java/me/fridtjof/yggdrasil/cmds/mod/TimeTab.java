@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.mod;
 
+import me.fridtjof.puddingapi.bukkit.cmds.ArgumentParser;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -13,23 +14,14 @@ public class TimeTab implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 
-        List<String> arguments = new ArrayList<String>();
-        List<String> result = new ArrayList<>();
+        List<String> argList = new ArrayList<String>();
 
         if (sender.hasPermission("yggdrasil.cmd." + command.getName() + ".other_worlds")) {
             for(World worlds : Bukkit.getWorlds()) {
-                arguments.add(worlds.getName());
+                argList.add(worlds.getName());
             }
         }
 
-        if (args.length == 1) {
-            for (String a : arguments) {
-                if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                    result.add(a);
-                }
-            }
-        }
-
-        return result;
+        return ArgumentParser.parseArgs(args, argList);
     }
 }

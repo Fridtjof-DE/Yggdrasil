@@ -1,5 +1,6 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import me.fridtjof.yggdrasil.utils.MSG;
 import me.fridtjof.yggdrasil.Yggdrasil;
@@ -20,34 +21,37 @@ public class FlyCmd implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(args.length == 0) {
-            if(sender instanceof Player) {
-                if (sender.hasPermission("yggdrasil.cmd.fly") || sender.isOp()) {
-                    Player player = (Player) sender;
-                    PlayerUtils.toggleFly(player);
-                    player.sendMessage(MSG.toggledFly);
-                } else {
+        switch(args.length) {
+            case 0 -> {
+                if(sender instanceof Player) {
+                    if (sender.hasPermission("yggdrasil.cmd.fly") || sender.isOp()) {
+                        Player player = (Player) sender;
+                        PlayerUtils.toggleFly(player);
+                        player.sendMessage(MSG.toggledFly);
+                        return false;
+                    }
                     sender.sendMessage(MSG.noPermission);
+                    return false;
                 }
-            } else {
                 sender.sendMessage(MSG.enterPlayer);
             }
-        } else if(args.length == 1) {
-            if(sender.hasPermission("yggdrasil.cmd.fly.others") || sender.isOp()) {
-                Player player = Bukkit.getPlayer(args[0]);
-                if(player != null) {
-                    PlayerUtils.toggleFly(player);
-                    sender.sendMessage(MSG.youToggledFly.replaceAll("%player%", args[0]));
-                } else {
+            case 1 -> {
+                if(sender.hasPermission("yggdrasil.cmd.fly.others") || sender.isOp()) {
+
+                    Player targetPlayer = Bukkit.getPlayer(args[0]);
+                    if(targetPlayer != null) {
+                        PlayerUtils.toggleFly(targetPlayer);
+                        sender.sendMessage(PlaceholderAPI.setPlaceholders(targetPlayer, MSG.toggledFlyOthers));
+                        targetPlayer.sendMessage(MSG.toggledFly);
+                        return false;
+                    }
                     sender.sendMessage(MSG.playerNotFound.replaceAll("%player%", args[0]));
+                    return false;
                 }
-            } else {
                 sender.sendMessage(MSG.noPermission);
             }
-        } else {
-            sender.sendMessage(MSG.tooManyArguments);
+            default -> sender.sendMessage(MSG.tooManyArguments);
         }
-
         return false;
     }
 }

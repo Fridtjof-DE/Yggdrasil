@@ -64,8 +64,8 @@ public class ConfigManager {
         messagesFile.getConfig().addDefault("tablist.header", "&bTablist Header");
         messagesFile.getConfig().addDefault("tablist.footer", "&bTablist Footer");
 
-        messagesFile.getConfig().addDefault("chat.join_msg", "§a%player% joined the server!");
-        messagesFile.getConfig().addDefault("chat.quit_msg", "§a%player% left the server!");
+        messagesFile.getConfig().addDefault("chat.join_msg", "§a%player_displayname% joined the server!");
+        messagesFile.getConfig().addDefault("chat.quit_msg", "§a%player_displayname% left the server!");
         messagesFile.getConfig().addDefault("chat.msg_format", "§b%player_displayname%§7: §f");
 
         messagesFile.getConfig().addDefault("info.rules", "§lRules:§r\n" +
@@ -73,16 +73,15 @@ public class ConfigManager {
                 "1. Ruleeeeee\n" +
                 "2. Rulesssss\n");
 
-        messagesFile.getConfig().addDefault("error.no_permission", "§cYou don't have the permission to do that!");
+        messagesFile.getConfig().addDefault("error.no_permission", "§cMissing permission!");
         messagesFile.getConfig().addDefault("error.too_many_args", "§cToo many arguments!");
         messagesFile.getConfig().addDefault("error.not_enough_args", "§cNot enough arguments!");
         messagesFile.getConfig().addDefault("error.incorrect_args", "§cIncorrect argument!");
         messagesFile.getConfig().addDefault("error.player_only", "§cThis command is player-only!");
-        messagesFile.getConfig().addDefault("error.slot_occupied", "§cThis slot is already occupied!");
 
         messagesFile.getConfig().addDefault("spawn.spawn", "§bYou've been teleported to the spawn!");
-        messagesFile.getConfig().addDefault("spawn.set_spawn", "§bThe spawn was set to: ");
-        messagesFile.getConfig().addDefault("spawn.spawn_others", "§bYou teleported %target% to the spawn!");
+        messagesFile.getConfig().addDefault("spawn.set_spawn", "§bThe spawn was set to: §f");
+        messagesFile.getConfig().addDefault("spawn.spawn_others", "§bYou teleported §f%target%§b to the spawn!");
 
         messagesFile.getConfig().addDefault("enter.player", "§cPlease enter a player!");
         messagesFile.getConfig().addDefault("enter.world", "§cPlease enter a world!");
@@ -90,15 +89,17 @@ public class ConfigManager {
         messagesFile.getConfig().addDefault("enter.gamemode", "§cPlease enter a gamemode!");
         messagesFile.getConfig().addDefault("enter.message", "§cPlease enter a message!");
 
-        messagesFile.getConfig().addDefault("not_found.player", "§cThe player %player% §cwas not found!");
-        messagesFile.getConfig().addDefault("not_found.world", "§cThe world %world% §cwas not found!");
+        messagesFile.getConfig().addDefault("not_found.player", "§cThe player §f%player%§c was not found!");
+        messagesFile.getConfig().addDefault("not_found.world", "§cThe world §f%world%§c was not found!");
 
-        messagesFile.getConfig().addDefault("set.fly_speed", "§bYou've set %player% fly-speed for to %speed%!");
-        messagesFile.getConfig().addDefault("set.walk_speed", "§bYou've set %player% walk-speed for to %speed%!");
-        messagesFile.getConfig().addDefault("set.time", "§bTime was set to %time% ticks in world §f%world%!§b");
+        messagesFile.getConfig().addDefault("set.fly_speed", "§bThe fly-speed of §f%player%§b was set to %speed%!");
+        messagesFile.getConfig().addDefault("set.walk_speed", "§bThe walk-speed of §f%player%§b was set to %speed%!");
+        messagesFile.getConfig().addDefault("set.time", "§bThe time was set to §f%time%§b ticks in world §f%world%!§b");
+        messagesFile.getConfig().addDefault("set.gamemode", "§bYour gamemode has been set to §f%ygg_gamemode%§b!");
+        messagesFile.getConfig().addDefault("set.gamemode_others", "§bThe gamemode of §f%player_displayname%§b has been set to §f%ygg_gamemode%§b!");
 
-        messagesFile.getConfig().addDefault("toggle.fly-mode", "§bYou've toggled fly-mode!");
-        messagesFile.getConfig().addDefault("toggle.fly-mode_others", "§bYou've toggled fly-mode for %player%!");
+        messagesFile.getConfig().addDefault("toggle.fly-mode", "§bToggled fly-mode!");
+        messagesFile.getConfig().addDefault("toggle.fly-mode_others", "§bToggled the fly-mode of §f%player_displayname%§f!");
 
         messagesFile.getConfig().addDefault("heal.heal", "§bYou've been healed!");
         messagesFile.getConfig().addDefault("heal.heal_others", "§bYou healed %player%!");

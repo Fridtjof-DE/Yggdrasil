@@ -1,5 +1,7 @@
 package me.fridtjof.yggdrasil.cmds.cheats;
 
+import me.fridtjof.puddingapi.bukkit.cmds.ArgumentParser;
+import me.fridtjof.puddingapi.bukkit.player.PlayerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -13,44 +15,16 @@ public class HeadTab implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 
-        List<String> arguments1 = new ArrayList<String>();
-        List<String> arguments2 = new ArrayList<String>();
-        List<String> result = new ArrayList<>();
+        List<String> argList1 = new ArrayList<String>();
+        List<String> argList2 = new ArrayList<String>();
 
         if(sender.hasPermission("yggdrasil.cmd.head.others") || sender.isOp()) {
-            addAllPlayer(arguments1);
+            PlayerUtils.addAllPlayers(argList1);
         }
-
         if(sender.hasPermission("yggdrasil.cmd.head.give_others") || sender.isOp()) {
-            addAllPlayer(arguments2);
+            PlayerUtils.addAllPlayers(argList2);
         }
 
-
-
-        if (args.length == 1) {
-            for (String a : arguments1) {
-                if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                    result.add(a);
-                }
-            }
-            return result;
-        } else if (args.length == 2) {
-            for (String a : arguments2) {
-                if (a.toLowerCase().startsWith(args[1].toLowerCase())) {
-                    result.add(a);
-                }
-            }
-            return result;
-        } else if (args.length >= 3) {
-            return result;
-        }
-
-        return null;
-    }
-
-    private void addAllPlayer(List<String> arguments) {
-        for(Player p : Bukkit.getOnlinePlayers()){
-            arguments.add(p.getName());
-        }
+        return ArgumentParser.parseArgs(args, argList1, argList2);
     }
 }

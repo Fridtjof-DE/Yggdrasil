@@ -63,9 +63,7 @@ public class TimeCmd implements CommandExecutor {
                 }
                 setTimeInWorld(sender, args[0], ticks);
             }
-            default -> {
-                sender.sendMessage(MSG.tooManyArguments);
-            }
+            default -> sender.sendMessage(MSG.tooManyArguments);
         }
     }
 
