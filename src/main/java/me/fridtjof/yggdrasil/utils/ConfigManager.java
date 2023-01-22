@@ -77,26 +77,23 @@ public class ConfigManager {
         messagesFile.getConfig().addDefault("error.too_many_args", "§cToo many arguments!");
         messagesFile.getConfig().addDefault("error.not_enough_args", "§cNot enough arguments!");
         messagesFile.getConfig().addDefault("error.incorrect_args", "§cIncorrect argument!");
-        messagesFile.getConfig().addDefault("error.player_only", "§cThis command is player-only!");
 
         messagesFile.getConfig().addDefault("spawn.spawn", "§bYou've been teleported to the spawn!");
         messagesFile.getConfig().addDefault("spawn.set_spawn", "§bThe spawn was set to: §f");
         messagesFile.getConfig().addDefault("spawn.spawn_others", "§bYou teleported §f%target%§b to the spawn!");
 
-        messagesFile.getConfig().addDefault("enter.player", "§cPlease enter a player!");
         messagesFile.getConfig().addDefault("enter.world", "§cPlease enter a world!");
         messagesFile.getConfig().addDefault("enter.value", "§cPlease enter a value!");
-        messagesFile.getConfig().addDefault("enter.gamemode", "§cPlease enter a gamemode!");
         messagesFile.getConfig().addDefault("enter.message", "§cPlease enter a message!");
 
-        messagesFile.getConfig().addDefault("not_found.player", "§cThe player §f%player%§c was not found!");
+        messagesFile.getConfig().addDefault("not_found.player", "§cThe player §f%ygg_player%§c was not found!");
         messagesFile.getConfig().addDefault("not_found.world", "§cThe world §f%world%§c was not found!");
 
         messagesFile.getConfig().addDefault("set.fly_speed", "§bThe fly-speed of §f%player%§b was set to %speed%!");
         messagesFile.getConfig().addDefault("set.walk_speed", "§bThe walk-speed of §f%player%§b was set to %speed%!");
         messagesFile.getConfig().addDefault("set.time", "§bThe time was set to §f%time%§b ticks in world §f%world%!§b");
         messagesFile.getConfig().addDefault("set.gamemode", "§bYour gamemode has been set to §f%ygg_gamemode%§b!");
-        messagesFile.getConfig().addDefault("set.gamemode_others", "§bThe gamemode of §f%player_displayname%§b has been set to §f%ygg_gamemode%§b!");
+        messagesFile.getConfig().addDefault("set.gamemode_others", "§bThe gamemode of §f%player_displayname%§b has been set to §b%ygg_gamemode%§f!");
 
         messagesFile.getConfig().addDefault("toggle.fly-mode", "§bToggled fly-mode!");
         messagesFile.getConfig().addDefault("toggle.fly-mode_others", "§bToggled the fly-mode of §f%player_displayname%§f!");

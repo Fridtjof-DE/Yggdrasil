@@ -33,7 +33,7 @@ public class FlyCmd implements CommandExecutor {
                     sender.sendMessage(MSG.noPermission);
                     return false;
                 }
-                sender.sendMessage(MSG.enterPlayer);
+                sender.sendMessage(MSG.notEnoughArgs);
             }
             case 1 -> {
                 if(sender.hasPermission("yggdrasil.cmd.fly.others") || sender.isOp()) {

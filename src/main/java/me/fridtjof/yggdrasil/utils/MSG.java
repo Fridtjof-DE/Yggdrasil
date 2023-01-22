@@ -10,12 +10,8 @@ public class MSG {
     public static String tooManyArguments = plugin.configManager.messagesFile.getConfig().getString("error.too_many_args");
     public static String notEnoughArgs = plugin.configManager.messagesFile.getConfig().getString("error.not_enough_args");
     public static String incorrectArgument = plugin.configManager.messagesFile.getConfig().getString("error.incorrect_args");
-    public static String playerOnly = plugin.configManager.messagesFile.getConfig().getString("error.player_only");
-
-    public static String enterGameMode = plugin.configManager.messagesFile.getConfig().getString("enter.gamemode");
     public static String enterWorld = plugin.configManager.messagesFile.getConfig().getString("enter.world");
     public static String enterValue = plugin.configManager.messagesFile.getConfig().getString("enter.value");
-    public static String enterPlayer = plugin.configManager.messagesFile.getConfig().getString("enter.player");
     public static String enterMessage = plugin.configManager.messagesFile.getConfig().getString("enter.message");
 
     public static String playerNotFound = plugin.configManager.messagesFile.getConfig().getString("not_found.player");

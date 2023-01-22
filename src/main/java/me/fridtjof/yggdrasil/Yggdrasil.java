@@ -13,7 +13,7 @@ public final class Yggdrasil extends JavaPlugin {
     //TODO Blitz wo man hinschaut
     //TODO TP in andere world
     //TODO others Rechte verbessern
-    //TDOO sun
+    //TODO sun head
 
     private static Yggdrasil instance;
 

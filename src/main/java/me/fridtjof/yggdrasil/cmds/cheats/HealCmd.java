@@ -32,7 +32,7 @@ public class HealCmd implements CommandExecutor {
                     sender.sendMessage(MSG.noPermission);
                 }
             } else {
-                sender.sendMessage(MSG.enterPlayer);
+                sender.sendMessage(MSG.notEnoughArgs);
             }
         } else if(args.length == 1) {
             if(sender.hasPermission("yggdrasil.cmd.heal.others") || sender.isOp()) {

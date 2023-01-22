@@ -35,7 +35,7 @@ public class HeadCmd implements CommandExecutor {
                     addHeadToInv(senderPlayer, senderPlayer.getName());
                     sender.sendMessage(MSG.heresYourHead);
                 } else {
-                    sender.sendMessage(MSG.enterPlayer);
+                    sender.sendMessage(MSG.notEnoughArgs);
                 }
             }
 

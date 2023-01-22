@@ -40,7 +40,7 @@ public class SpeedCmd implements CommandExecutor {
                 return false;
             }
 
-            sender.sendMessage(MSG.enterPlayer);
+            sender.sendMessage(MSG.notEnoughArgs);
             return false;
         }
 

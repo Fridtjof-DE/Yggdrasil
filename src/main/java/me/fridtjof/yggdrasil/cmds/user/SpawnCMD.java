@@ -26,7 +26,7 @@ public class SpawnCMD implements CommandExecutor {
                     sender.sendMessage(MSG.noPermission);
                 }
             } else {
-                sender.sendMessage(MSG.enterPlayer);
+                sender.sendMessage(MSG.notEnoughArgs);
             }
         } else if(args.length == 1) {
             if (sender.hasPermission("yggdrasil.cmd.spawn.others") || sender.isOp()) {
