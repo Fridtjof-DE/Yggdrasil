@@ -14,10 +14,10 @@ public class YggdrasilTab implements TabCompleter {
 
         List<String> argList = new ArrayList<String>();
 
-        if(sender.hasPermission("yggdrasil.reload") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.plugin.reload")) {
             argList.add("reload");
         }
-        if(sender.hasPermission("yggdrasil.info") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.plugin.info")) {
             argList.add("info");
         }
 

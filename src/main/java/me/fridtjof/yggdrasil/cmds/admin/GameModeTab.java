@@ -16,40 +16,40 @@ public class GameModeTab implements TabCompleter {
         List<String> argList1 = new ArrayList<String>();
         List<String> argList2 = new ArrayList<String>();
 
-        if(sender.hasPermission("yggdrasil.cmd.gm.0") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.cmd.gamemode.survival") || sender.hasPermission("yggdrasil.cmd.gamemode.others.survival")) {
             argList1.add("0");
             argList1.add("survival");
         }
-        if(sender.hasPermission("yggdrasil.cmd.gm.1") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.cmd.gamemode.creative") || sender.hasPermission("yggdrasil.cmd.gamemode.others.creative")) {
             argList1.add("1");
             argList1.add("creative");
         }
-        if(sender.hasPermission("yggdrasil.cmd.gm.2") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.cmd.gamemode.adventure") || sender.hasPermission("yggdrasil.cmd.gamemode.others.adventure")) {
             argList1.add("2");
             argList1.add("adventure");
         }
-        if(sender.hasPermission("yggdrasil.cmd.gm.3") || sender.isOp()) {
+        if(sender.hasPermission("yggdrasil.cmd.gamemode.spectator") || sender.hasPermission("yggdrasil.cmd.gamemode.others.spectator")) {
             argList1.add("3");
             argList1.add("spectator");
         }
 
         if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.0.others") || sender.isOp()) {
+            if(sender.hasPermission("yggdrasil.cmd.gamemode.others.survival")) {
                 PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.1.others") || sender.isOp()) {
+            if(sender.hasPermission("yggdrasil.cmd.gamemode.others.creative")) {
                 PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.2.others") || sender.isOp()) {
+            if(sender.hasPermission("yggdrasil.cmd.gamemode.others.adventure")) {
                 PlayerUtils.addAllPlayers(argList2);
             }
         }
         if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
-            if(sender.hasPermission("yggdrasil.cmd.gm.3.others") || sender.isOp()) {
+            if(sender.hasPermission("yggdrasil.cmd.gamemode.others.spectator")) {
                 PlayerUtils.addAllPlayers(argList2);
             }
         }

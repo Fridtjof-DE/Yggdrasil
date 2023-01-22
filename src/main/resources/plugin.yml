@@ -9,22 +9,23 @@ website: https://www.fridtjof.me/
 depend: [PuddingAPI, PlaceholderAPI]
 
 commands:
-  head:
-    description: Gets a player's head.
-  msg:
-    description: Sends a message to player.
-  tell:
-    description: Sends a message to player.
-  whisper:
-    description: Sends a message to player.
+  gamemode:
+    description: Set a player's gamemode.
+    usage: /<command> <gamemode> <player>
+    aliases: gm
+    permission-message: ""
+    permission: yggdrasil.cmd.gamemode.base
   setspawn:
-    description: Sets the spawn.
-  spawn:
-    description: Send the player to the spawn.
+    description: Sets the global spawn.
+    usage: /<command> <x> <y> <z> <yaw> <pitch>
+    permission-message: ""
+    permission: yggdrasil.cmd.spawn.set
   yggdrasil:
-    description: Some Yggdrasil commands.
-  heal:
-    description: Heal.
+    description: Yggdrasil
+    usage: /<command> [info | reload]
+    permission-message: ""
+    permission: yggdrasil.plugin.base
+
   day:
     description: Sets time to day.
   night:
@@ -33,22 +34,61 @@ commands:
     description: Sets time to noon.
   midnight:
     description: Sets time to midnight.
-  gm:
-    description: Set gamemode.
-  gamemode:
-    description: Set gamemode.
+
   fly:
     description: Toggle fly.
+  head:
+    description: Gets a player's head.
+  heal:
+    description: Heal.
   speed:
     description: Set speed.
+
+  msg:
+    description: Sends a message to player.
+  tell:
+    description: Sends a message to player.
+  whisper:
+    description: Sends a message to player.
   rules:
-    description: View rules.
+    description: View the rules.
+  spawn:
+    description: Send the player to the spawn.
 
 permissions:
-  yggdrasil.signs.formatting_codes:
-    description: Grants permission to use formatting codes on signs.
+  yggdrasil.cmd.gamemode.*:
+    children:
+      yggdrasil.cmd.gamemode.base: true
+      yggdrasil.cmd.gamemode.survival: true
+      yggdrasil.cmd.gamemode.creative: true
+      yggdrasil.cmd.gamemode.adventure: true
+      yggdrasil.cmd.gamemode.spectator: true
+      yggdrasil.cmd.gamemode.others.survival: true
+      yggdrasil.cmd.gamemode.others.creative: true
+      yggdrasil.cmd.gamemode.others.adventure: true
+      yggdrasil.cmd.gamemode.others.spectator: true
+  yggdrasil.cmd.spawn.*:
+    children:
+      yggdrasil.cmd.spawn.base: true
+      yggdrasil.cmd.spawn.others.use: true
+      yggdrasil.cmd.spawn.use: true
+  yggdrasil.plugin.*:
+    children:
+      yggdrasil.plugin.base: true
+      yggdrasil.plugin.reload: true
+      yggdrasil.plugin.info: true
+
+  yggdrasil.cmd.day:
+    description: Sets the time in a world to day.
+  yggdrasil.cmd.night:
+    description: Sets the time in a world to night.
+  yggdrasil.cmd.noon:
+    description: Sets the time in a world to noon.
+  yggdrasil.cmd.midnight:
+    description: Sets the time in a world to midnight.
+
   yggdrasil.cmd.fly.others:
-     description: Toggles fly-mode for others.
+    description: Toggles fly-mode for others.
   yggdrasil.cmd.fly:
     description: Toggles fly-mode.
   yggdrasil.cmd.head:
@@ -57,48 +97,10 @@ permissions:
     description: Gets a player's head.
   yggdrasil.cmd.head.give_others:
     description: Gives a player a player's head.
-  yggdrasil.cmd.setspawn:
-    description: Sets the spawn.
-  yggdrasil.cmd.spawn:
-    description: Sends the player to the spawn.
-  yggdrasil.cmd.spawn.others:
-    description: Sends a player to the spawn.
-  yggdrasil.reload:
-    description: Reloads the plugin.
-  yggdrasil.info:
-    description: Info about the plugin.
-  yggdrasil.heal:
+  yggdrasil.cmd.heal:
     description: Heal.
   yggdrasil.cmd.heal.others:
     description: Heal others.
-  yggdrasil.chat.color_codes:
-    description: Allows the user to user colors in chat.
-  yggdrasil.chat.formatting_codes:
-    description: Allows the user to user formatting codes in chat.
-  yggdrasil.cmd.gm.0:
-    description: /gm 0
-  yggdrasil.cmd.gm.0.others:
-    description: /gm 0 others
-  yggdrasil.cmd.gm.1:
-    description: /gm 1
-  yggdrasil.cmd.gm.1.others:
-    description: /gm 1 others
-  yggdrasil.cmd.gm.2:
-    description: /gm 2
-  yggdrasil.cmd.gm.2.others:
-    description: /gm 2 others
-  yggdrasil.cmd.gm.3:
-    description: /gm 3
-  yggdrasil.cmd.gm.3.others:
-    description: /gm 3 others
-  yggdrasil.cmd.day:
-    description: Sets time to day.
-  yggdrasil.cmd.night:
-    description: Sets time to night.
-  yggdrasil.cmd.noon:
-    description: Sets time to noon.
-  yggdrasil.cmd.midnight:
-    description: Sets time to midnight.
   yggdrasil.cmd.speed:
     description: Set a your speed.
   yggdrasil.cmd.speed.others:
@@ -107,5 +109,14 @@ permissions:
     description: Set a your fly-speed.
   yggdrasil.cmd.fly_speed.others:
     description: Set a player's fly-speed.
+
   yggdrasil.cmd.rules:
-    description: View rules.
+    description:
+      View rules.
+
+  yggdrasil.chat.color_codes:
+    description: Allows the user to user colors in chat.
+  yggdrasil.chat.formatting_codes:
+    description: Allows the user to user formatting codes in chat.
+  yggdrasil.signs.formatting_codes:
+    description: Grants permission to use formatting codes on signs.
